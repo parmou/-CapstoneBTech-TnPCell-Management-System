@@ -9,6 +9,8 @@ import { TeamComponent } from './landing/team/team.component';
 import { StudentloginComponent } from './studentlogin/studentlogin.component';
 import { SindexComponent } from './studentlogin/sindex/sindex.component';
 import { SidelistComponent } from './studentlogin/sidelist/sidelist.component';
+import { StudentprofileComponent } from './studentlogin/studentprofile/studentprofile.component';
+import { StudentnavigationComponent } from './studentlogin/studentnavigation/studentnavigation.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { SidelistComponent } from './studentlogin/sidelist/sidelist.component';
     StudentloginComponent,
     SindexComponent,
     SidelistComponent,
+    StudentprofileComponent,
+    StudentnavigationComponent,
     
   ],
   imports: [
