@@ -13,7 +13,7 @@ body{
 }
 
 .container, figure{
-  width:450px;
+  width:70%;
   height: 270px;
   
 }
@@ -21,8 +21,9 @@ body{
 .container{
   position:relative;
   perspective:1000;
-  margin: auto;
+  margin-right: 5%;
   display: block; 
+  
 }
 
 .card{
