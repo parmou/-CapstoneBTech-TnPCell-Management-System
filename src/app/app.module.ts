@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TeamComponent } from './landing/team/team.component';
+import { ServicesComponent } from './landing/services/services.component';
+import { HeaderComponent } from './landing/header/header.component';
+import { FooterComponent } from './landing/footer/footer.component';
 
 
 @NgModule({
@@ -14,6 +17,9 @@ import { TeamComponent } from './landing/team/team.component';
     LandingComponent,
     NavigationComponent,
     TeamComponent,
+    ServicesComponent,
+    HeaderComponent,
+    FooterComponent,
     
   ],
   imports: [
