@@ -1,8 +1,21 @@
 .container {
     width: 100%;
-    background-color: cadetblue;
+    background-color: #66A2E7;
     margin: 0%;
-}
-.container  {
+    
+    background-size:cover; 
     color: white;
+}
+
+.container > div {
+    margin-left: 3%;
+    text-align: center;
+    
+    padding: 3%;
+    
+}
+
+.heading_one {
+   
+    text-align: center;
 }
