@@ -54,7 +54,7 @@ import { AboutComponent } from './landing/about/about.component';
 
     SettingsComponent,
 
-<<<<<<< HEAD
+
     RegisterformComponent,
 
     PersonaldetailComponent,
@@ -63,11 +63,11 @@ import { AboutComponent } from './landing/about/about.component';
 
     TrainingdetailComponent,
 
-=======
+
     AboutComponent,
 
     
->>>>>>> 73ce3775553c4b1de1175a03c6f6c9f0a1366c1a
+
    
 
     
