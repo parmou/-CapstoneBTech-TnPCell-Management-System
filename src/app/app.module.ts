@@ -11,11 +11,8 @@ import { HeaderComponent } from './landing/header/header.component';
 import { FooterComponent } from './landing/footer/footer.component';
 import { StudentloginComponent } from './studentlogin/studentlogin.component';
 import { SindexComponent } from './studentlogin/sindex/sindex.component';
-
-
 import { StudentprofileComponent } from './studentlogin/studentprofile/studentprofile.component';
 import { StudentnavigationComponent } from './studentlogin/studentnavigation/studentnavigation.component';
-
 import { LoginComponent } from './landing/login/login.component';
 
 
@@ -31,15 +28,10 @@ import { LoginComponent } from './landing/login/login.component';
     FooterComponent,
     StudentloginComponent,
     SindexComponent,
-    
-
     StudentprofileComponent,
     StudentnavigationComponent,
-
     LoginComponent,
-    
-
-    
+  
   ],
   imports: [
     BrowserModule,
