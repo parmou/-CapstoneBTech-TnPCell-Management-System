@@ -21,7 +21,7 @@ import { StudentnavigationComponent } from './landing/user/studentlogin/studentn
 import { LoginComponent } from './landing/login/login.component';
 import { ErrorComponent } from './error/error.component';
 import { SettingsComponent } from './landing/user/settings/settings.component';
-import { ResgisterformComponent } from './user/studentlogin/resgisterform/resgisterform.component';
+
 
 
 
@@ -46,7 +46,7 @@ import { ResgisterformComponent } from './user/studentlogin/resgisterform/resgis
 
     SettingsComponent,
 
-    ResgisterformComponent,
+   
 
     
     
