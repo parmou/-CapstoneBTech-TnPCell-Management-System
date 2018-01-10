@@ -9,12 +9,12 @@ import { TeamComponent } from './landing/team/team.component';
 import { ServicesComponent } from './landing/services/services.component';
 import { HeaderComponent } from './landing/header/header.component';
 import { FooterComponent } from './landing/footer/footer.component';
-import { StudentloginComponent } from './studentlogin/studentlogin.component';
-import { SindexComponent } from './studentlogin/sindex/sindex.component';
+import { StudentloginComponent } from './landing/user/studentlogin/studentlogin.component';
+import { SindexComponent } from './landing/user/studentlogin/sindex/sindex.component';
 
 
-import { StudentprofileComponent } from './studentlogin/studentprofile/studentprofile.component';
-import { StudentnavigationComponent } from './studentlogin/studentnavigation/studentnavigation.component';
+import { StudentprofileComponent } from './landing/user/studentlogin/studentprofile/studentprofile.component';
+import { StudentnavigationComponent } from './landing/user/studentlogin/studentnavigation/studentnavigation.component';
 
 import { LoginComponent } from './landing/login/login.component';
 import { ErrorComponent } from './error/error.component';

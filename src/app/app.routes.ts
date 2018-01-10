@@ -1,8 +1,8 @@
 import {Routes,RouterModule} from '@angular/router';
 import {LandingComponent} from './landing/landing.component';
-import {StudentloginComponent} from './studentlogin/studentlogin.component';
-import { SindexComponent}  from './studentlogin/sindex/sindex.component';
-import {StudentprofileComponent} from './studentlogin/studentprofile/studentprofile.component'
+import {StudentloginComponent} from './landing/user/studentlogin/studentlogin.component';
+import { SindexComponent}  from './landing/user/studentlogin/sindex/sindex.component';
+import {StudentprofileComponent} from './landing/user/studentlogin/studentprofile/studentprofile.component'
 import { Component } from '@angular/core/src/metadata/directives';
 import { ErrorComponent } from './error/error.component';
 import { SettingsComponent } from './landing/user/settings/settings.component';
@@ -12,16 +12,16 @@ const routes:Routes = [
         path:'',component:LandingComponent
     },
     {
-    	path:'profile',
+    	path:'user/profile',
     	component: StudentprofileComponent
     },
     {	
-    	path:'registration',
+    	path:'user/registration',
     	component: SindexComponent
 
     },
     {
-    	path:'studentlogin',
+    	path:'user/studentlogin',
     	component: StudentloginComponent
     },
     {
