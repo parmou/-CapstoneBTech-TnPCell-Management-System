@@ -21,6 +21,10 @@ import { StudentnavigationComponent } from './landing/user/studentlogin/studentn
 import { LoginComponent } from './landing/login/login.component';
 import { ErrorComponent } from './error/error.component';
 import { SettingsComponent } from './landing/user/settings/settings.component';
+import { RegisterformComponent } from './landing/user/studentlogin/registerform/registerform.component';
+import { PersonaldetailComponent } from './landing/user/studentlogin/registerform/personaldetail/personaldetail.component';
+import { AcademicdetailComponent } from './landing/user/studentlogin/registerform/academicdetail/academicdetail.component';
+import { TrainingdetailComponent } from './landing/user/studentlogin/registerform/trainingdetail/trainingdetail.component';
 
 
 
@@ -45,6 +49,14 @@ import { SettingsComponent } from './landing/user/settings/settings.component';
     ErrorComponent,
 
     SettingsComponent,
+
+    RegisterformComponent,
+
+    PersonaldetailComponent,
+
+    AcademicdetailComponent,
+
+    TrainingdetailComponent,
 
    
 
