@@ -17,6 +17,9 @@ import { StudentprofileComponent } from './studentlogin/studentprofile/studentpr
 import { StudentnavigationComponent } from './studentlogin/studentnavigation/studentnavigation.component';
 
 import { LoginComponent } from './landing/login/login.component';
+import { ErrorComponent } from './error/error.component';
+import { SettingsComponent } from './landing/user/settings/settings.component';
+
 
 
 
@@ -37,6 +40,12 @@ import { LoginComponent } from './landing/login/login.component';
     StudentnavigationComponent,
 
     LoginComponent,
+
+    ErrorComponent,
+
+    SettingsComponent,
+
+    
     
 
     
