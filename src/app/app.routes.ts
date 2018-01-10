@@ -14,7 +14,7 @@ const routes:Routes = [
     },
     {	
     	path:'registration',
-    	component: SindexComponent;
+    	component: SindexComponent
 
     },
     {
