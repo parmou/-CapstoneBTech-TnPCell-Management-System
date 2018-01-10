@@ -6,7 +6,7 @@ import {StudentprofileComponent} from './landing/user/studentlogin/studentprofil
 import { Component } from '@angular/core/src/metadata/directives';
 import { ErrorComponent } from './error/error.component';
 import { SettingsComponent } from './landing/user/settings/settings.component';
-
+//import { AuthGuard } from './shared/auth-guard.service';
 const routes:Routes = [
     {
         path:'',component:LandingComponent
@@ -31,7 +31,12 @@ const routes:Routes = [
     {
         path:'user/settings',
         component: SettingsComponent
+    },
+    {
+        path:'**',
+        redirectTo: 'error'
     }
+    
 
 ]
 
