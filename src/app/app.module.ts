@@ -26,6 +26,7 @@ import { AboutComponent } from './landing/about/about.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,7 @@ import { AboutComponent } from './landing/about/about.component';
     AboutComponent,
 
     
+   
 
     
     
