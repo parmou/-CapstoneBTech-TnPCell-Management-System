@@ -13,8 +13,11 @@ img{
 	object-position: center;
 	border-radius: 50%;
 }
+.container{
+	align: center;
+	width: 60%;
+}
 .customcard{
-	margin: 10px;
 	padding: 20px;
 }
 .icon{
