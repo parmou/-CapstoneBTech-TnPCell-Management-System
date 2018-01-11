@@ -14,7 +14,7 @@ import { StudentloginComponent } from './landing/user/studentlogin/studentlogin.
 import { SindexComponent } from './landing/user/studentlogin/sindex/sindex.component';
 
 
-import { StudentprofileComponent } from './landing/user/studentlogin/studentprofile/studentprofile.component';
+import { StudentprofileComponent } from './landing/user/studentprofile/studentprofile.component';
 import { StudentnavigationComponent } from './landing/user/studentlogin/studentnavigation/studentnavigation.component';
 
 
