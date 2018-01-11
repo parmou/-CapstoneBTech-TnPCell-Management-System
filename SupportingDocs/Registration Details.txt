@@ -1,0 +1,49 @@
+Details Student should provide for regitration: (Personal)
+1. Name ( First Name, Last Name)
+2. Fathers Name + ( Mother's Name or Guradian Name)
+3. Degree type (UG, PG, B.Voc)
+4. Course (Engg,BSc, etc)
+5. trade ( Computer etc)
+6. Roll Number
+7. Year of admission
+8. Permanent Address
+9. Correspondance Address
+10. Student Contact Details - Email and Contact No
+11. Father/Guardian Contact Details
+12. Gender
+13. Admision category
+14. student photo
+
+Academic Details
+1. School Name (10th and 12th)
+2. Board of Education
+3. Marks in 10th 
+4. Specilization in 12th (PCM or PCB or)
+5. Board for 12th
+6. Marks in 12th
+7. Semester marks( option to fill Re appear ) - Extra (  select subject in reappear or not)
+
+
+Details Company Should Provide for placement drive:
+
+1. Name of the Caompany
+2. Company website
+3. Hiring for which profile ( Graduate Trainee, Data Analyst, etc)
+4. Package Details
+5. Selection procdure - Eligibility Criterion
+6. tentative dates for the drive
+7. Name of person to contact
+8. Position of the above mentioned person in the company
+9. Contact details
+10. No of position ( optional)
+11. Drive purpose  - Internship or Training
+
+Details for the initial process of training:
+1. Year 2nd or 3rd ( can be fixed)
+2. 3 Options priority wise
+
+Once student starts the training
+1. Name of the company 
+2. Name of the HR
+3. contact details of the HR
+4. Name of the supervisior or Training Head 

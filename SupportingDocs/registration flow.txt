@@ -1,0 +1,38 @@
+STUDENT 
+
+Training
+
+Registration for Summer Training/ Summer Internship
+
+An option to select between training and Internship
+
+If training
+
+1. A webpage for student to fill 3 choices for Summer Training - priority wise
+
+2. A webpage showing the choices filled in the previous step with a button "Approved by TPO" or change preference
+	*optional - student can be asked to upload the copy of approved request form by tpo)
+3. When approved -  Page showing choice filled with a button "Approved by the company"
+	*optional - student can be asked to upload the copy of approved call letter by company
+4. If approved by the company student is required to fill the details for the company or Institute
+5. If not approved go back to the step 2 and again start the process.
+
+For Internship student can give the details of the company in step 1 and then same as step 2
+
+-------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
+PLACEMENT
+
+Notification received to register for the event
+1. All the details of the student will be provided for verification.
+2. Then apply for the company.
+
+
+-----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+Company
+ Company will provide the details as mentioned in the supporting document.
+-> as per the dates and eligibility criterion, a notification will be sent by the tpo sir to students to resgister for the event.
+
+
