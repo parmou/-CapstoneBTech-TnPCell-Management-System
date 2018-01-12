@@ -56,7 +56,7 @@ import { FillDetailComponent } from './landing/user/training/fill-detail/fill-de
     AcademicdetailComponent,
     TrainingdetailComponent,
     AboutComponent,
-<<<<<<< HEAD
+
 
 
     HomeComponent,
@@ -70,14 +70,14 @@ import { FillDetailComponent } from './landing/user/training/fill-detail/fill-de
 
     
 
-=======
+
     TrainingComponent,
     StepperComponent,
     PreferenceComponent,
     TpoApprovalComponent,
     CompanyApprovalComponent,
     FillDetailComponent,
->>>>>>> 0c68603faa0b48d72574770ae4d87a48f7a276ce
+
   ],
   imports: [
     BrowserModule,
