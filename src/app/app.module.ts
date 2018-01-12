@@ -5,27 +5,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { TeamComponent } from './landing/team/team.component';
-import { ServicesComponent } from './landing/services/services.component';
-import { HeaderComponent } from './landing/header/header.component';
-import { FooterComponent } from './landing/footer/footer.component';
+import { TeamComponent } from './landing/landing-components/team/team.component';
+import { ServicesComponent } from './landing/landing-components/services/services.component';
+import { HeaderComponent } from './landing/landing-components/header/header.component';
+import { FooterComponent } from './landing/landing-components/footer/footer.component';
 import { StudentloginComponent } from './landing/user/studentlogin/studentlogin.component';
 import { SindexComponent } from './landing/user/studentlogin/sindex/sindex.component';
 import { StudentprofileComponent } from './landing/user/studentprofile/studentprofile.component';
 import { StudentnavigationComponent } from './landing/user/studentlogin/studentnavigation/studentnavigation.component';
-import { LoginComponent } from './landing/login/login.component';
+import { LoginComponent } from './landing/landing-components/login/login.component';
 import { ErrorComponent } from './error/error.component';
 import { SettingsComponent } from './landing/user/settings/settings.component';
 import { PersonaldetailComponent } from './landing/user/training/fill-detail/personaldetail/personaldetail.component';
 import { AcademicdetailComponent } from './landing/user/training/fill-detail/academicdetail/academicdetail.component';
 import { TrainingdetailComponent } from './landing/user/training/fill-detail/trainingdetail/trainingdetail.component';
-import { AboutComponent } from './landing/about/about.component';
+import { AboutComponent } from './landing/landing-components/about/about.component';
 import { HomeComponent } from './landing/user/home/home.component';
 import { CompanyComponent } from './landing/company/company.component';
-
-
-
-
 import { TrainingComponent } from './landing/user/training/training.component';
 import { StepperComponent } from './landing/user/training/stepper/stepper.component';
 import { PreferenceComponent } from './landing/user/training/preference/preference.component';
@@ -36,6 +32,8 @@ import { CompanyHomeComponent } from './landing/company/company-home/company-hom
 import { CompanyNavigationComponent } from './landing/company/company-navigation/company-navigation.component';
 import { CompanyDetailsComponent } from './landing/company/company-details/company-details.component';
 import { TnpDetailsComponent } from './landing/company/company-home/tnp-details/tnp-details.component';
+import { DashboardComponent } from './landing/coordinator/dashboard/dashboard.component';
+import { EventComponent } from './landing/coordinator/dashboard/event/event.component';
 
 
 @NgModule({
@@ -69,6 +67,8 @@ import { TnpDetailsComponent } from './landing/company/company-home/tnp-details/
     CompanyNavigationComponent,
     CompanyDetailsComponent,
     TnpDetailsComponent,
+    DashboardComponent,
+    EventComponent,
 
   ],
   imports: [
