@@ -6,10 +6,9 @@ import {StudentprofileComponent} from './landing/user/studentprofile/studentprof
 import { Component } from '@angular/core/src/metadata/directives';
 import { ErrorComponent } from './error/error.component';
 import { SettingsComponent } from './landing/user/settings/settings.component';
-
 import { HomeComponent } from './landing/user/home/home.component' ;
-
 import { TrainingComponent } from './landing/user/training/training.component';
+import { CompanyHomeComponent } from './landing/company/company-home/company-home.component';
 
 //import { AuthGuard } from './shared/auth-guard.service';
 const routes:Routes = [
@@ -34,16 +33,16 @@ const routes:Routes = [
         component: SettingsComponent
     },
     {
-        path:'error',
-        component: ErrorComponent
+        path:'user/training',
+        component : TrainingComponent
     },
     {
         path:'company/home',
-        component: HomeComponent
+        component: CompanyHomeComponent
     },
     {
-        path:'user/training',
-        component : TrainingComponent
+        path:'error',
+        component: ErrorComponent
     },
     {
         path:'**',

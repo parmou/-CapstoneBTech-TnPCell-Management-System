@@ -32,6 +32,10 @@ import { PreferenceComponent } from './landing/user/training/preference/preferen
 import { TpoApprovalComponent } from './landing/user/training/tpo-approval/tpo-approval.component';
 import { CompanyApprovalComponent } from './landing/user/training/company-approval/company-approval.component';
 import { FillDetailComponent } from './landing/user/training/fill-detail/fill-detail.component';
+import { CompanyHomeComponent } from './landing/company/company-home/company-home.component';
+import { CompanyNavigationComponent } from './landing/company/company-navigation/company-navigation.component';
+import { CompanyDetailsComponent } from './landing/company/company-details/company-details.component';
+import { TnpDetailsComponent } from './landing/company/company-home/tnp-details/tnp-details.component';
 
 
 @NgModule({
@@ -61,6 +65,10 @@ import { FillDetailComponent } from './landing/user/training/fill-detail/fill-de
     TpoApprovalComponent,
     CompanyApprovalComponent,
     FillDetailComponent,
+    CompanyHomeComponent,
+    CompanyNavigationComponent,
+    CompanyDetailsComponent,
+    TnpDetailsComponent,
 
   ],
   imports: [
