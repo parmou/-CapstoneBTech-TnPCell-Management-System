@@ -6,15 +6,11 @@ import {StudentprofileComponent} from './landing/user/studentprofile/studentprof
 import { Component } from '@angular/core/src/metadata/directives';
 import { ErrorComponent } from './error/error.component';
 import { SettingsComponent } from './landing/user/settings/settings.component';
-<<<<<<< HEAD
-import { HomeComponent } from './landing/company/home/home.component';
-=======
 
 import { HomeComponent } from './landing/user/home/home.component' ;
 
 import { TrainingComponent } from './landing/user/training/training.component';
 
->>>>>>> 92ec5a0ae45e4f8fe1c2f4dcfb2d682c835dcd2a
 //import { AuthGuard } from './shared/auth-guard.service';
 const routes:Routes = [
     {

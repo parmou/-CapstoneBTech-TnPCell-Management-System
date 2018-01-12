@@ -20,17 +20,8 @@ import { PersonaldetailComponent } from './landing/user/training/fill-detail/per
 import { AcademicdetailComponent } from './landing/user/training/fill-detail/academicdetail/academicdetail.component';
 import { TrainingdetailComponent } from './landing/user/training/fill-detail/trainingdetail/trainingdetail.component';
 import { AboutComponent } from './landing/about/about.component';
-
 import { HomeComponent } from './landing/user/home/home.component';
-
-
-<<<<<<< HEAD
-import { AboutComponent } from './landing/about/about.component';
 import { CompanyComponent } from './landing/company/company.component';
-import { HomeComponent } from './landing/company/home/home.component';
-import { DetailsComponent } from './landing/company/home/details/details.component';
-=======
->>>>>>> 92ec5a0ae45e4f8fe1c2f4dcfb2d682c835dcd2a
 
 
 
@@ -63,30 +54,7 @@ import { FillDetailComponent } from './landing/user/training/fill-detail/fill-de
     AcademicdetailComponent,
     TrainingdetailComponent,
     AboutComponent,
-
-
-
     HomeComponent,
-
-
-    CompanyComponent,
-
-
-    HomeComponent,
-
-
-    DetailsComponent,
-
-    
-
-   
-
-    
-    
-
-    
-
-
     TrainingComponent,
     StepperComponent,
     PreferenceComponent,

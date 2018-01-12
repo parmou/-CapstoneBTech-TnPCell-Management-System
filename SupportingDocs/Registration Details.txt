@@ -46,11 +46,8 @@ Details for the initial process of training:
 2. 3 Options priority wise
 
 Once student starts the training
-<<<<<<< HEAD
+
 1. Name of the company
-=======
-1. Name of the company 
->>>>>>> 92ec5a0ae45e4f8fe1c2f4dcfb2d682c835dcd2a
 2. Name of the HR
 3. contact details of the HR
 4. Name of the supervisor or Training Head
