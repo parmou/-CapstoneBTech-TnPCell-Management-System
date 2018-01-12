@@ -1,3 +1,127 @@
-<p>
-  event works!
-</p>
+<div class="background">
+   
+
+
+</div>
+
+
+
+
+<div class="text-center">
+    <h1> There is no event created yet.</h1>
+    <p>To create an event, just click on the round button below</p>
+  </div>
+
+  <!-- Event List -- >
+
+<div class="wrap">
+  <div class="tile"> 
+    <div class="text">
+    <h1>Basic Facilities</h1>
+    <h2 class="animate-text">Hi hello tata See you</h2>
+    <p class="animate-text">Hi this is me We are developing a TNP Cell Management System</p>
+  <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    </div>
+   </div>
+  
+  
+  <div class="tile"> 
+    <div class="text">
+      <h1>Basic Facilities</h1>
+      <h2 class="animate-text">Hi hello tata See you</h2>
+      <p class="animate-text">Hi this is me We are developing a TNP Cell Management System</p><div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    </div>
+   </div>
+    
+    <div class="tile"> 
+    <div class="text">
+      <h1>Basic Facilities</h1>
+      <h2 class="animate-text">Hi hello tata See you</h2>
+      <p class="animate-text">Hi this is me We are developing a TNP Cell Management System</p><div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    </div>
+   </div>
+  </div>
+
+  <!-- Fab Button -->
+
+        
+        
+  <div id="container-floating" data-toggle="modal" data-target="#exampleModalLong">
+      
+<div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="newmail()">
+          <p class="plus">+</p>
+          <img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">
+        </div>
+      
+      </div>
+      
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!--Trainig Module-->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="well">
+          <h3>Create an Event</h3>
+          <form>
+            <header>
+                <div class="form-group">
+                    <label for="inputInstititue">Event Name</label>
+                    <input type="text" name="inputInstitituename" placeholder="Event Name">
+                  </div>
+            </header>
+            
+            
+          <div class="form-group">
+            <h5>Now Add Important Fields As Necessary</h5>
+            <div *ngFor="let number of times; let i = index">
+              <label for="inputInstititue">{{number.type}}</label>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="remove(i)">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              <input type="text" name="inputInstititueaddress" placeholder="Address of the Institute/Company for Summer Training">
+            </div>
+          </div>
+          <input type="text" name="inputInstititueaddress" style="width:40%;" placeholder="Type of Data" #type required>
+          <button type="submit" class="btn btn-primary end" (click)="add(type.value)">Add More Fields</button>
+
+          </form>
+          </div>
+      </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

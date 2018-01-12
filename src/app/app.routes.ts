@@ -9,8 +9,8 @@ import { SettingsComponent } from './landing/user/settings/settings.component';
 import { HomeComponent } from './landing/user/home/home.component' ;
 import { TrainingComponent } from './landing/user/training/training.component';
 import { CompanyHomeComponent } from './landing/company/company-home/company-home.component';
+import { EventComponent } from './landing/coordinator/dashboard/event/event.component';
 
-//import { AuthGuard } from './shared/auth-guard.service';
 const routes:Routes = [
     {
         path:'',component:LandingComponent
@@ -43,6 +43,10 @@ const routes:Routes = [
     {
         path:'error',
         component: ErrorComponent
+    },
+    {
+        path:'coordinator/event',
+        component: EventComponent
     },
     {
         path:'**',
