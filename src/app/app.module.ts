@@ -31,7 +31,7 @@ import { FillDetailComponent } from './landing/user/training/fill-detail/fill-de
 import { CompanyHomeComponent } from './landing/company/company-home/company-home.component';
 import { CompanyNavigationComponent } from './landing/company/company-navigation/company-navigation.component';
 import { CompanyDetailsComponent } from './landing/company/company-details/company-details.component';
-import { TnpDetailsComponent } from './landing/company/company-home/tnp-details/tnp-details.component';
+import { UniversityHighlightsComponent } from './landing/company/company-home/university-highlights/university-highlights.component';
 import { DashboardComponent } from './landing/coordinator/dashboard/dashboard.component';
 import { EventComponent } from './landing/coordinator/dashboard/event/event.component';
 
@@ -66,7 +66,7 @@ import { EventComponent } from './landing/coordinator/dashboard/event/event.comp
     CompanyHomeComponent,
     CompanyNavigationComponent,
     CompanyDetailsComponent,
-    TnpDetailsComponent,
+    UniversityHighlightsComponent,
     DashboardComponent,
     EventComponent,
 
