@@ -42,7 +42,7 @@ Details for the initial process of training:
 1. Year 2nd or 3rd ( can be fixed)
 2. 3 Options priority wise
 
-Once student starts the trainig
+Once student starts the training
 1. Name of the company 
 2. Name of the HR
 3. contact details of the HR
