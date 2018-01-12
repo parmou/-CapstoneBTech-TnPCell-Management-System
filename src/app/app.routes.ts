@@ -6,6 +6,7 @@ import {StudentprofileComponent} from './landing/user/studentprofile/studentprof
 import { Component } from '@angular/core/src/metadata/directives';
 import { ErrorComponent } from './error/error.component';
 import { SettingsComponent } from './landing/user/settings/settings.component';
+import { HomeComponent } from './landing/user/home/home.component' ;
 //import { AuthGuard } from './shared/auth-guard.service';
 const routes:Routes = [
     {
@@ -22,7 +23,7 @@ const routes:Routes = [
     },
     {
     	path:'user/home',
-    	component: StudentloginComponent
+    	component: HomeComponent
     },
     {
         path:'error',
