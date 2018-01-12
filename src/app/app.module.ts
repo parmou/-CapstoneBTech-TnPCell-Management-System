@@ -35,7 +35,7 @@ import { FillDetailComponent } from './landing/user/training/fill-detail/fill-de
 import { CompanyHomeComponent } from './landing/company/company-home/company-home.component';
 import { CompanyNavigationComponent } from './landing/company/company-navigation/company-navigation.component';
 import { CompanyDetailsComponent } from './landing/company/company-details/company-details.component';
-import { TnpDetailsComponent } from './landing/company/company-home/tnp-details/tnp-details.component';
+import { UniversityHighlightsComponent } from './landing/company/company-home/university-highlights/university-highlights.component';
 
 
 @NgModule({
@@ -68,7 +68,7 @@ import { TnpDetailsComponent } from './landing/company/company-home/tnp-details/
     CompanyHomeComponent,
     CompanyNavigationComponent,
     CompanyDetailsComponent,
-    TnpDetailsComponent,
+    UniversityHighlightsComponent,
 
   ],
   imports: [

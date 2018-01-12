@@ -6,3 +6,16 @@
     background-size:cover;
     color: white;
 }
+img{
+  width: 80%;
+  length: 2%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+.container{
+  color: #66A2E7;
+  width: 20%;
+  height: 20%;
+  padding-bottom: 
+}
