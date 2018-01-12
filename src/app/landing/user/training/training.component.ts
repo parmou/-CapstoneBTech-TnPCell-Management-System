@@ -10,7 +10,7 @@ export class TrainingComponent implements OnInit {
   checkState1 : boolean = false;
   checkState2 : boolean = false;
   checkState3 : boolean = false;
-  checkState4 : boolean = true
+  checkState4 : boolean = true;
   constructor() { }
 
   ngOnInit() {
@@ -36,17 +36,16 @@ export class TrainingComponent implements OnInit {
       this.checkState2 = false;
       this.checkState3 = true;
       this.checkState4 = false;
-      alert(this.checkState3);
     }
     if (position == 4) {
       this.checkState1 = false;
       this.checkState2 = false;
       this.checkState3 = false;
-      this.checkState4 = true
+      this.checkState4 = true;
     }
 
-    
+
   }
-    
+
 
 }
