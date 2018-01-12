@@ -1,0 +1,16 @@
+* {
+    margin-left: 1%;  
+}
+.selected {
+    color : green;
+    border : 1px solid green; 
+    border-radius: 5px;
+ 
+}
+
+.rejected {
+    color : red;
+    border : 1px solid red;
+    border-radius: 5px;
+  
+}

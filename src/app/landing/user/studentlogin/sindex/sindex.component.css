@@ -1,51 +1,23 @@
 .container{
-  width: inherit;
+  width: 80%;
   padding: 10px;
-  margin: 10%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-right: auto;
+  margin-left: auto;
   padding: 10px;
   
 
 }
-.customcard{
-	display: flex;
-	border: 2px;
-	border-color: cadetblue;
-	background-color:white ;
-	padding: 10px;
-	box-shadow: 0 0 40px #999999;
-	
-	
 
-}
-/*.card {
-  background-color: #fff;
-  border-radius: 4px;
-  max-width: 400px;
-  margin: 10% auto;
-  height: 100px;
-  position: relative;
-  padding: 34px;
-  color: #444;
-  cursor: pointer;
-}
 
-.card:before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: #ccc;
-  left: 20px;
-  right: 20px;
-  bottom: 0;
-  top: 50%;
-  z-index: -1;
+.card {
+  display: flex;
+  padding: 10px;
   box-shadow: 0 0 40px #999999;
-  transition: box-shadow .2s ease-in-out;
+  margin: auto;
 }
-.card.level-3:hover:before {
-  box-shadow: 0 0 80px #999999;
+
+.card-text{
+  padding: 10px;
 }
-.card h5 {
-  font-weight: 300;
-  font-size: 30px;
-} */

@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 .container{
 	align: center;
 	width: 55%;
+=======
+.namecard{
+
+	margin-top:10px;
+	margin-left: 5px;
+	width: 300px;
+
+>>>>>>> 92ec5a0ae45e4f8fe1c2f4dcfb2d682c835dcd2a
 }
 .customcard{
 	padding: 5%;
