@@ -16,8 +16,15 @@
   padding: 10px;
   box-shadow: 0 0 40px #999999;
   margin: auto;
+
 }
 
 .card-text{
   padding: 10px;
+}
+
+.card:hover{
+  transform: scale(1.05);
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
