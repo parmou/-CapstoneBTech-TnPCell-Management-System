@@ -1,28 +1,13 @@
-.namecard{
-
-	margin-top:10px;
-	margin-left: 5px;
-	width: 300px;
-
-}
-img{
-	height: 100px;
-	width: 100px;
-	padding: 10px;
-	margin:25px;
-	object-position: center;
-	border-radius: 50%;
-}
 .container{
 	align: center;
-	width: 60%;
+	width: 55%;
 }
 .customcard{
-	padding: 20px;
+	padding: 5%;
 }
 .icon{
 	float: right;
-	padding: 5px;
+	padding: 1%;
 
 }
 .card-header{

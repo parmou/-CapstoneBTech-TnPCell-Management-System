@@ -28,6 +28,9 @@ import { AcademicdetailComponent } from './landing/user/studentlogin/registerfor
 import { TrainingdetailComponent } from './landing/user/studentlogin/registerform/trainingdetail/trainingdetail.component';
 
 import { AboutComponent } from './landing/about/about.component';
+import { CompanyComponent } from './landing/company/company.component';
+import { HomeComponent } from './landing/company/home/home.component';
+import { DetailsComponent } from './landing/company/home/details/details.component';
 
 
 
@@ -65,6 +68,15 @@ import { AboutComponent } from './landing/about/about.component';
 
 
     AboutComponent,
+
+
+    CompanyComponent,
+
+
+    HomeComponent,
+
+
+    DetailsComponent,
 
     
 

@@ -1,4 +1,4 @@
-STUDENT 
+STUDENT
 
 Training
 
@@ -33,6 +33,4 @@ Notification received to register for the event
 -----------------------------------------------------------------------------------------------------------------
 Company
  Company will provide the details as mentioned in the supporting document.
--> as per the dates and eligibility criterion, a notification will be sent by the tpo sir to students to resgister for the event.
-
-
+-> as per the dates and eligibility criterion, a notification will be sent by the tpo sir and to students to register for the event.
