@@ -34,7 +34,7 @@ import { CompanyDetailsComponent } from './landing/company/company-details/compa
 import { UniversityHighlightsComponent } from './landing/company/company-home/university-highlights/university-highlights.component';
 import { DashboardComponent } from './landing/coordinator/dashboard/dashboard.component';
 import { EventComponent } from './landing/coordinator/dashboard/event/event.component';
-import { SearchdbComponent } from './landing/coordinator/dashboard/searchdb/searchdb.component';
+import { CompanyRegisterComponent } from './landing/company/company-register/company-register.component';
 
 
 @NgModule({
@@ -70,7 +70,7 @@ import { SearchdbComponent } from './landing/coordinator/dashboard/searchdb/sear
     UniversityHighlightsComponent,
     DashboardComponent,
     EventComponent,
-    SearchdbComponent,
+    CompanyRegisterComponent,
 
   ],
   imports: [
