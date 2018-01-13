@@ -34,6 +34,7 @@ import { CompanyDetailsComponent } from './landing/company/company-details/compa
 import { UniversityHighlightsComponent } from './landing/company/company-home/university-highlights/university-highlights.component';
 import { DashboardComponent } from './landing/coordinator/dashboard/dashboard.component';
 import { EventComponent } from './landing/coordinator/dashboard/event/event.component';
+import { SearchdbComponent } from './landing/coordinator/dashboard/searchdb/searchdb.component';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { EventComponent } from './landing/coordinator/dashboard/event/event.comp
     UniversityHighlightsComponent,
     DashboardComponent,
     EventComponent,
+    SearchdbComponent,
 
   ],
   imports: [

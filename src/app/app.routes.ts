@@ -10,6 +10,7 @@ import { HomeComponent } from './landing/user/home/home.component' ;
 import { TrainingComponent } from './landing/user/training/training.component';
 import { CompanyHomeComponent } from './landing/company/company-home/company-home.component';
 import { EventComponent } from './landing/coordinator/dashboard/event/event.component';
+import { SearchdbComponent } from './landing/coordinator/dashboard/searchdb/searchdb.component';
 
 const routes:Routes = [
     {
@@ -47,6 +48,10 @@ const routes:Routes = [
     {
         path:'coordinator/event',
         component: EventComponent
+    },
+    {
+        path: 'coordinator/search',
+        component: SearchdbComponent
     },
     {
         path:'**',
