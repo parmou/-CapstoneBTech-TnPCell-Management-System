@@ -44,7 +44,7 @@ const routes:Routes = [
     {
         path:'company/register',
         component: CompanyRegisterComponent
-    }
+    },
     {
         path:'error',
         component: ErrorComponent

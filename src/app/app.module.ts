@@ -35,6 +35,7 @@ import { UniversityHighlightsComponent } from './landing/company/company-home/un
 import { DashboardComponent } from './landing/coordinator/dashboard/dashboard.component';
 import { EventComponent } from './landing/coordinator/dashboard/event/event.component';
 import { CompanyRegisterComponent } from './landing/company/company-register/company-register.component';
+import { CompanyFormComponent } from './landing/company/company-form/company-form.component';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { CompanyRegisterComponent } from './landing/company/company-register/com
     DashboardComponent,
     EventComponent,
     CompanyRegisterComponent,
+    CompanyFormComponent,
 
   ],
   imports: [
