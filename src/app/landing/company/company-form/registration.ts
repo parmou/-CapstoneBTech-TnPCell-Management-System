@@ -6,7 +6,7 @@ export class Registration {
     public comapnyWebsite: string,
     public profile: string,
     public companyPackage: number,
-    public dates?:string,
+    public dates:string,
     public contactPersonName: string,
     public personPosition: string,
     public personContact: string,
