@@ -19,7 +19,7 @@ export class CompanyFormComponent implements OnInit {
               'others'];
   purposes = ['placement', 'Internship'];
 
-  model = new Registration(12,'abc','www.xyz.com',this.profiles[0],'','','','','',this.purposes[0]);
+  model = new Registration(12,'abc','www.xyz.com',this.profiles[0], 1 ,'','','','',this.purposes[0]);
 
   submitted = false;
 
