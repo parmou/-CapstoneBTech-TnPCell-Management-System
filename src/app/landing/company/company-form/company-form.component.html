@@ -1,0 +1,143 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Company Registration Form</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <label for="companyName" style="font-size:200%">Name of the Company</label>
+      <input type="name" class="form-control" id="companyName"
+             required placeholder="Enter company name"
+             [(ngModel)]="model.companyName" name="companyName"
+             #name="ngModel">
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        Name is required
+      </div>
+      <label for="companyWebsite" style="font-size:200%">Company Website</label>
+      <input type="name" class="form-control" id="companyWebsite"
+             required placeholder="Enter company website"
+             [(ngModel)]="model.companyWebsite" name="companyWebsite"
+             #name="ngModel">
+      <div [hidden]="name.valid || name.pristine"
+           class="alert alert-danger">
+        Website is required
+      </div>
+
+      <div class="form-group">
+        <label for="profile" style="font-size:200%">Hiring for which Profile</label>
+        <select class="form-control"  id="profile"
+                required
+                [(ngModel)]="model.profile" name="profile"
+                #profile='ngModel'>
+          <option *ngFor="let profile of profiles" [value]="profile">{{profile}}</option>
+        </select>
+        <div [hidden]="profile.valid || profile.pristine" class="alert alert-danger">
+          Profile is required
+        </div>
+      </div>
+      <div class='form-group'>
+        <label for='companyPackage' style="font-size:200%">Package CTC</label>
+        <input type="number" class="form-control" id="companyPackage"
+               required placeholder="Enter package CTC"
+               [(ngModel)]="model.companyPackage" name="companyPackage"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Package CTC is required
+        </div>
+      </div>
+        <div class="form-group">
+          <label for="eligibilityCriteria" style="font-size:200%">Upload Eligibility Criteria</label>
+          <input type="file" class="form-control-file" id="eligibilityCriteria" aria-describedby="fileHelp">
+          <small id="fileHelp" class="form-text text-muted">Upload your file in a .pdf format</small>
+        </div>
+        <div class="form-group">
+          <label for="selectionProcedure" style="font-size:200%">Upload Selection Procedure</label>
+          <input type="file" class="form-control-file" id="selectionProcedure" aria-describedby="fileHelp">
+          <small id="fileHelp" class="form-text text-muted">Upload your file in a .pdf format</small>
+        </div>
+        <div class='form-group'>
+          <label for='driveDates' style="font-size:200%">Tentative dates for the Drive</label>
+            <input type="date" class="form-control" id="driveDates" placeholder="Enter Tentative dates">
+        </div>
+        <div class='form-group'>
+          <label for='contactPersonName' style="font-size:200%">Name of Person to contact</label>
+          <input type="name" class="form-control" id="contactPersonName"
+               required placeholder="Enter name of contact person"
+               [(ngModel)]="model.contactPersonName" name="contactPersonName"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class='form-group'>
+          <label for='personPosition' style="font-size:200%">Position of person in Company</label>
+          <input type="name" class="form-control" id="personPosition"
+          required placeholder="Enter position in Company"
+          [(ngModel)]="model.personPosition" name="personPosition"
+          #name="ngModel">
+          <div [hidden]="name.valid || name.pristine"
+               class="alert alert-danger">
+            Position is required
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='personContact' style="font-size:200%">Contact number of person to contact</label>
+          <input type="string" class="form-control" id="personContact"
+            required placeholder="Enter contact details of Person"
+            [(ngModel)]="model.personContact" name="personContact"
+            #name="ngModel">
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            Contact is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="drivePurpose"  style="font-size: 200%;">Purpose of Drive</label>
+          <select class="form-control"  id="drivePurpose"
+                  required
+                  [(ngModel)]="model.purpose" name="drivePurpose"
+                  #profile='ngModel'>
+            <option *ngFor="let purpose of purposes" [value]="purpose">{{purpose}}</option>
+          </select>
+        </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+
+    </form>
+  </div>
+<div [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-lg-3">Company Name</div>
+    <div class="col-lg-9  pull-left">{{ model.comapnyName }}</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">Website</div>
+    <div class="col-lg-9 pull-left">{{ model.companyWebsite }}</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">Profile</div>
+    <div class="col-lg-9 pull-left">{{ model.profile }}</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">Package CTC</div>
+    <div class="col-lg-9 pull-left">{{ model.companyPackage }}</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">Tentative Dates</div>
+    <div class="col-lg-9 pull-left">{{ model.dates}}</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">Contact Person</div>
+    <div class="col-lg-9 pull-left">{{ model.contactPersonName}}</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">Position</div>
+    <div class="col-lg-9 pull-left">{{ model.personPosition}}</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">Contact</div>
+    <div class="col-lg-9 pull-left">{{ model.personContact}}</div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>
+</div>
