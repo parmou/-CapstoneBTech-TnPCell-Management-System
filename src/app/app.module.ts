@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule, RequestOptions } from '@angular/http';
 import { APP_ROUTES_PROVIDER } from './app.routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -36,6 +37,11 @@ import { DashboardComponent } from './landing/coordinator/dashboard/dashboard.co
 import { EventComponent } from './landing/coordinator/dashboard/event/event.component';
 import { CompanyRegisterComponent } from './landing/company/company-register/company-register.component';
 import { CompanyFormComponent } from './landing/company/company-form/company-form.component';
+
+
+
+/* Service import  */
+import { BaseService } from './service/student/base.service';
 
 
 @NgModule({
@@ -79,9 +85,10 @@ import { CompanyFormComponent } from './landing/company/company-form/company-for
     BrowserModule,
     APP_ROUTES_PROVIDER,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [BaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

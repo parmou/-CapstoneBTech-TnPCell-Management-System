@@ -32,7 +32,7 @@
         <input type="email" id="email">
         <label for="password">Password</label>
         <input type="password" id="password">
-        <input type="submit" id="submit" [routerLink]="['/user/home']" value="Submit">
+        <input type="submit" id="submit" (click)="login()" value="Submit">
       </div>
     </div>
   </div>

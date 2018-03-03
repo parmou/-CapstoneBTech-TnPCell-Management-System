@@ -12,31 +12,36 @@ import { CompanyHomeComponent } from './landing/company/company-home/company-hom
 import { EventComponent } from './landing/coordinator/dashboard/event/event.component';
 import { LoginComponent } from './landing/landing-components/login/login.component';
 import { CompanyRegisterComponent} from './landing/company/company-register/company-register.component';
+import { LoginComponent } from './landing/landing-components/login/login.component';
 
 const routes:Routes = [
     {
         path:'',
-        component:LandingComponent
+        component: LandingComponent
     },
     {
-    	path:'user/profile',
+        path:'login',
+        component: LoginComponent
+    },
+    {
+    	path:'student/profile',
     	component: StudentprofileComponent
     },
     {
-    	path:'user/registration',
+    	path:'student/registration',
     	component: SindexComponent
 
     },
     {
-    	path:'user/home',
+    	path:'student/home',
     	component: HomeComponent
     },
     {
-        path:'user/settings',
+        path:'student/settings',
         component: SettingsComponent
     },
     {
-        path:'user/training',
+        path:'student/training',
         component : TrainingComponent
     },
     {
