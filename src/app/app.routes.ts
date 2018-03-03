@@ -10,6 +10,7 @@ import { HomeComponent } from './landing/user/home/home.component' ;
 import { TrainingComponent } from './landing/user/training/training.component';
 import { CompanyHomeComponent } from './landing/company/company-home/company-home.component';
 import { EventComponent } from './landing/coordinator/dashboard/event/event.component';
+import { LoginComponent } from './landing/landing-components/login/login.component';
 import { CompanyRegisterComponent} from './landing/company/company-register/company-register.component';
 import { LoginComponent } from './landing/landing-components/login/login.component';
 
@@ -54,6 +55,10 @@ const routes:Routes = [
     {
         path:'error',
         component: ErrorComponent
+    },
+    {
+      path:'login',
+      component: LoginComponent
     },
     {
         path:'coordinator/event',

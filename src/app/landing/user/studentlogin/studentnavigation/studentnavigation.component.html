@@ -5,29 +5,27 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
               <span class="icon-bar "></span>
               <span class="icon-bar"></span>
-              <span class="icon-bar"></span> 
-              <span class="icon-bar"></span> 
-              <span class="icon-bar"></span> 
-              <span class="icon-bar"></span> 
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" style="color:rgb(255, 255, 255)" href="#">DCRUST</a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
-         
+
             <ul class="nav navbar-nav navbar-right" routerLinkActive="active">
-              
-                 
-                 <li><a href="#home" style="color:rgb(255, 255, 255)"><strong>Home</strong></a></li>
-                 <li><a href="/registration" style="color:rgb(255, 255, 255)"><strong>Registration</strong></a></li>
-                 <li><a href="/profile" style="color:rgb(255, 255, 255)"><strong>Profile</strong></a></li>
+
+
+                 <li><a [routerLink]="['/user/home']" style="color:rgb(255, 255, 255)"><strong>Home</strong></a></li>
+                 <li><a [routerLink]="['/user/training']"style="color:rgb(255, 255, 255)"><strong>Registration</strong></a></li>
+                 <li><a [routerLink]="['/user/profile']" style="color:rgb(255, 255, 255)"><strong>Profile</strong></a></li>
                  <li><a href="#account" style="color:rgb(255, 255, 255)"><strong>Account</strong></a></li>
-                 <li><a style="color:rgb(255, 255, 255)" href="#log out"><strong>Logout</strong></a></li>
+                 <li><a style="color:rgb(255, 255, 255)" href="#"><strong>Logout</strong></a></li>
             </ul>
-            
-           
-            
+
+
+
             </div>
         </div>
 </nav>
-      
-      
