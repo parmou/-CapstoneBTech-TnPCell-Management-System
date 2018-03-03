@@ -6,7 +6,11 @@ module.exports = function(app) {
         res.send('api works');
     });
 
+    /* Different routes exported here */ 
+    require('./student/base')(app);
     
+    /*require('./coordinator/base')(app);
+    require('./company/base')(app);*/
 
 
     // Catch all other routes and return the index file
