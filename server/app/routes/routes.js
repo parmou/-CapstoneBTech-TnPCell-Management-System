@@ -8,8 +8,13 @@ module.exports = function(app) {
 
     /* Different routes exported here */ 
     require('./student/base')(app);
+    require('./student/profile')(app);
+    require('./student/registration')(app);
+    require('./student/settings')(app);
+    require('./student/training')(app);
     require('./coordinator/base')(app);
     require('./company/base')(app);
+    require('./company/register')(app);
 
 
     // Catch all other routes and return the index file

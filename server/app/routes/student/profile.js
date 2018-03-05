@@ -1,7 +1,6 @@
 module.exports = function(app) {
     
-    app.get('/company/home', (req,res) => {
+    app.get('/student/profile', (req,res) => {
         res.send('success');
     })
-
 }
