@@ -8,7 +8,14 @@ module.exports = function(app) {
     app.post('/student/registration', (req,res) => {
         var char = new Student({
             name: req.headers.name,
-            age: req.headers.age
+            age: req.headers.age,
+            rollno: req.headers.rollno,
+            contact: req.headers.contact,
+            email: req.headers.email,
+            fathersName: req.headers.fathersname,
+            mothersName: req.headers.mothersname,
+            address: req.headers.address,
+            dob: req.headers.dob,
         });
         char.save(function(err,char){
             if(err){
