@@ -8,6 +8,7 @@ import { BaseService } from '../../../service/student/base.service';
 export class LoginComponent implements OnInit {
   isValid = true;
   iserror = false;
+  registered = true;
   constructor(private student : BaseService) { }
 
 
@@ -16,6 +17,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.student.studentHome();
+  }
+
+  register(){
+    this.registered= !this.registered;
+  }
+
+  signup(){
     this.student.studentHome();
   }
   
