@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import {BaseServiceCoordinator} from '../../../../service/coordinator/base.service'
 
 @Component({
   selector: 'app-event',
@@ -15,9 +16,10 @@ export class EventComponent implements OnInit {
   ];
 
   events : any[] = [1];
-  constructor() { }
+  constructor(private service: BaseServiceCoordinator) { }
 
   ngOnInit() {
+    
   }
 
   add(type : String) {
@@ -26,6 +28,13 @@ export class EventComponent implements OnInit {
   }
   remove(position : number) {
     this.times.splice(position,1);
+  }
+
+  addEvent( eventName: String) {
+    /* format the array and pass as a string */
+    let details : String;
+
+    this.service.addEvent(details);
   }
 
 }

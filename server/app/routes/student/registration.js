@@ -1,4 +1,4 @@
-const Student =require('../models/student');
+const User =require('../../models/User.js');
 module.exports = function(app) {
     
     app.get('/student/registration', (req,res) => {
@@ -6,16 +6,13 @@ module.exports = function(app) {
     })
 
     app.post('/student/registration', (req,res) => {
-        var char = new Student({
+        var char = new User({
             name: req.headers.name,
-            age: req.headers.age,
+            
             rollno: req.headers.rollno,
-            contact: req.headers.contact,
+            isAdmin: req.headers.isAdmin,
             email: req.headers.email,
-            fathersName: req.headers.fathersname,
-            mothersName: req.headers.mothersname,
-            address: req.headers.address,
-            dob: req.headers.dob,
+            
         });
         char.save(function(err,char){
             if(err){

@@ -1,71 +1,38 @@
-<div class="background">
-   
-
-
-</div>
-
-
-
 
 <div class="text-center">
     <h1> There is no event created yet.</h1>
     <p>To create an event, just click on the round button below</p>
-  </div>
+</div>
 
   <!-- Event List -- >
 
-<div class="wrap">
-  <div class="tile"> 
-    <div class="text">
-    <h1>Basic Facilities</h1>
-    <h2 class="animate-text">Hi hello tata See you</h2>
-    <p class="animate-text">Hi this is me We are developing a TNP Cell Management System</p>
-  <div class="dots">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    </div>
-   </div>
-  
-  
-  <div class="tile"> 
-    <div class="text">
-      <h1>Basic Facilities</h1>
-      <h2 class="animate-text">Hi hello tata See you</h2>
-      <p class="animate-text">Hi this is me We are developing a TNP Cell Management System</p><div class="dots">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    </div>
-   </div>
-    
-    <div class="tile"> 
-    <div class="text">
-      <h1>Basic Facilities</h1>
-      <h2 class="animate-text">Hi hello tata See you</h2>
-      <p class="animate-text">Hi this is me We are developing a TNP Cell Management System</p><div class="dots">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    </div>
-   </div>
-  </div>
+<div class="row">
+  <div class="col">
+    <!-- Event Cards -->
+      <div class="card" style="width: 18rem; margin: 2rem;">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+      </div>
+ 
+
 
   <!-- Fab Button -->
 
         
         
-  <div id="container-floating" data-toggle="modal" data-target="#exampleModalLong">
+<div id="container-floating" data-toggle="modal" data-target="#exampleModalLong">
       
-<div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="newmail()">
+  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="newmail()">
           <p class="plus">+</p>
           <img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">
-        </div>
+  </div>
       
-      </div>
+</div>
       
 
 
@@ -91,8 +58,8 @@
             <header>
                 <div class="form-group">
                     <label for="inputInstititue">Event Name</label>
-                    <input type="text" name="inputInstitituename" placeholder="Event Name">
-                  </div>
+                    <input type="text" name="inputInstitituename" placeholder="Event Name" #eventName>
+                </div>
             </header>
             
             
@@ -103,7 +70,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="remove(i)">
                   <span aria-hidden="true">&times;</span>
                 </button>
-              <input type="text" name="inputInstititueaddress" placeholder="Address of the Institute/Company for Summer Training">
+              <input type="text" name="inputInstititueaddress" placeholder="Type Here">
             </div>
           </div>
           <input type="text" name="inputInstititueaddress" style="width:40%;" placeholder="Type of Data" #type required>
@@ -116,7 +83,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="addEvent(eventName.val)">Save changes</button>
       </div>
     </div>
   </div>
