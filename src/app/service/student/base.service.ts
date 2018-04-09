@@ -4,12 +4,13 @@ import { Http, Response, Headers, RequestOptions,URLSearchParams } from '@angula
 import {Observable} from 'rxjs/Rx';
 import { Router } from '@angular/router';
 
+
 @Injectable()
 export class BaseService {
 
   //base url for student
-  baseUrl = "http://localhost:3000/student/home"
-
+  baseUrl = "http://localhost:3000/student/home";
+ 
   constructor( private http: Http, private router: Router ) { }
 
   studentHome() {
@@ -27,5 +28,7 @@ export class BaseService {
       }
     );
   }
+
+  
 
 }

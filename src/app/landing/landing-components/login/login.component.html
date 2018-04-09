@@ -49,7 +49,7 @@
             <div class="account-wall">
                 <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
                     alt="">
-                <form class="form-signin" #valForm="ngForm" (ngSubmit)="login(); valForm.reset();">
+                <form class="form-signin" #valForm="ngForm" (ngSubmit)="login(valForm.value); valForm.reset();">
                 <input type="text" class="form-control" placeholder="Roll Number" name="rollno" ngModel required autofocus>
                 <input type="password" class="form-control" placeholder="Password" name="password" ngModel required>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">
@@ -76,7 +76,7 @@
             <div class="account-wall">
                 <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
                     alt="">
-                <form class="form-signin" #val2Form="ngForm" (ngSubmit)="signup(); val2Form.reset();">
+                <form class="form-signin" #val2Form="ngForm" (ngSubmit)="signup(val2Form.value); val2Form.reset();">
                 <input type="text" class="form-control" placeholder="Name" name="name" ngModel required autofocus>
                 <input type="text" class="form-control" placeholder="Roll Number" name="rollno" ngModel required autofocus>
                 <input type="password" class="form-control" placeholder="Password" name="password" ngModel required>

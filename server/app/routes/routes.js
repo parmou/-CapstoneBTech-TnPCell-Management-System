@@ -7,6 +7,7 @@ module.exports = function(app) {
     });
 
     /* Different routes exported here */ 
+    
     require('./student/base')(app);
     require('./student/profile')(app);
     require('./student/registration')(app);

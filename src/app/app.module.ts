@@ -43,6 +43,7 @@ import { CompanyFormComponent } from './landing/company/company-form/company-for
 /* Service import  */
 import { BaseService } from './service/student/base.service';
 import { BaseServiceCoordinator} from './service/coordinator/base.service';
+import { LoginService } from './landing/landing-components/service/login.service';
 
 
 @NgModule({
@@ -89,7 +90,7 @@ import { BaseServiceCoordinator} from './service/coordinator/base.service';
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [BaseService,BaseServiceCoordinator],
+  providers: [BaseService,BaseServiceCoordinator, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
