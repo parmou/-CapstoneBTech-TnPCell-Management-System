@@ -22,8 +22,8 @@ export class LoginService {
     });
      return this.http.post(this.loginUrl+'student/signup',obj, options)
     .map((response: Response) => {
-      const result = response.json();
-      return result;
+      
+      return response;
     })
     .catch((error: Response | any) => {
       console.log(error.statusText);

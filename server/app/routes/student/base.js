@@ -2,7 +2,11 @@ var user = require('../../models/User');
 
 module.exports = function(app) {
     
+    var sess;
     app.get('/student/home', (req,res) => {
+        sess = req.session;
+        sess.rollno;
+        sess.name;
         res.send('success');
     });
 
@@ -19,18 +23,22 @@ module.exports = function(app) {
                 console.log(err);
             }
         })
-        res.send(user);
+        res.send('success');
     })
 
-    app.get('/student/login', (req,res) => {
+    app.post('/student/login', (req,res) => {
         user.findOne({rollno: req.body.rollno}, (err,result) => {
+            sess = req.session;
+            sess.rollno = req.body.rollno;
             if(err) {
                 res.send(err);
             }
             else if(result) {
-                if (result.password === req.body.password)
+                if (result.password === req.body.password){
+                   // console.log('here'+sess.rollno);
                     
                     res.send(result);
+                }
             }
             else {
                 console.log('not here')
