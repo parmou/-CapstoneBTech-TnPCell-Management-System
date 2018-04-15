@@ -45,7 +45,8 @@ import { BaseService } from './service/student/base.service';
 import { BaseServiceCoordinator} from './service/coordinator/base.service';
 import { LoginService } from './landing/landing-components/service/login.service';
 import { StorageServiceModule} from 'angular-webstorage-service';
-import {  StorageService } from 'angular-webstorage-service'
+import { RegisterationService } from './service/student/registeration.service';
+
 
 @NgModule({
   declarations: [
@@ -92,7 +93,7 @@ import {  StorageService } from 'angular-webstorage-service'
     HttpModule,
     StorageServiceModule
   ],
-  providers: [BaseService,BaseServiceCoordinator, LoginService],
+  providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
