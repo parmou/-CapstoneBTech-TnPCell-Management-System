@@ -8,7 +8,7 @@ import { LoginModel } from '../login/login.model';
 @Injectable()
 export class LoginService {
 
-  loginUrl = 'http://localhost:3000/';
+  baseUrl = 'http://localhost:3000/';
 
   constructor( private http: Http, private router: Router ) { }
 
@@ -20,10 +20,10 @@ export class LoginService {
     let options = new RequestOptions({
       headers: headers,
     });
-     return this.http.post(this.loginUrl+'student/signup',obj, options)
+     return this.http.post(this.baseUrl+'student/signup',obj, options)
     .map((response: Response) => {
-      const result = response.json();
-      return result;
+      
+      return response;
     })
     .catch((error: Response | any) => {
       console.log(error.statusText);
@@ -40,7 +40,7 @@ export class LoginService {
       headers: headers,
     });
     console.log(obj);
-     return this.http.post(this.loginUrl+'student/login',obj, options)
+     return this.http.post(this.baseUrl+'student/login',obj, options)
     .map((response: Response) => {
       
       return response;

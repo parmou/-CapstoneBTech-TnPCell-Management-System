@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
                                       console.log(error);
                                     },
                         () => {
-                          
+                          this.router.navigate['student/home']; 
                         }
                       );
   }
@@ -51,6 +51,9 @@ export class LoginComponent implements OnInit {
                         },
                         (error) => {
                           console.log('error');
+                        },
+                        () => {
+                          this.router.navigate['student/home']; 
                         }
                       );
   }

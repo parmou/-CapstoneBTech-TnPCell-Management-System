@@ -16,13 +16,16 @@ module.exports = function(app) {
         })
         student.save().then(function(err){
             if(err){
-                console.log(err);
+                res.send('database-error')
+            }
+            else {
+                res.send(student);
             }
         })
-        res.send(user);
+        res.send('error')
     })
 
-    app.get('/student/login', (req,res) => {
+    app.post('/student/login', (req,res) => {
         user.findOne({rollno: req.body.rollno}, (err,result) => {
             if(err) {
                 res.send(err);
