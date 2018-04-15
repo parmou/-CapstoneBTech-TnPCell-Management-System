@@ -11,8 +11,8 @@ export class RegisterationService {
 
   constructor( private http: Http, private router: Router ) { }
 
-  postPreferences(obj: {}) : Observable<any>{
-    console.log(obj);
+  postPreferences(obj: {}) : Observable<String[]>{
+    
     let headers = new Headers({
       'Content-Type': 'application/json'
     });

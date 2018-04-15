@@ -15,21 +15,14 @@ export class PreferenceComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  company1 : String;
-  company2 : String;
-  company3 : String;
-
+  company : String[]
+  
   sendPreferences(value: AppModel){
-    this.company1 = value.instituteName1 + "/" + value.instituteAddress1;
-    this.company2 = value.instituteName2 + "/" + value.instituteAddress2;
-    this.company3 = value.instituteName3 + "/" + value.instituteAddress3;
-
-    this.preferences.push(this.company1);
-    this.preferences.push(this.company2);
-    this.preferences.push(this.company3);
-
-    this.registerationService.postPreferences(this.preferences)
+    this.company = [];
+    this.company.push(value.instituteName1+'/'+value.instituteAddress1);
+    this.company.push(value.instituteName2+'/'+value.instituteAddress2);
+    this.company.push(value.instituteName3+'/'+value.instituteAddress3);
+    this.registerationService.postPreferences(this.company)
                                             .subscribe(
                                               (res) => {
                                                 console.log(res);

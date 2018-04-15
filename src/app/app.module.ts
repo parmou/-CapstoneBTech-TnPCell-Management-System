@@ -46,6 +46,7 @@ import { BaseServiceCoordinator} from './service/coordinator/base.service';
 import { LoginService } from './landing/landing-components/service/login.service';
 import { StorageServiceModule} from 'angular-webstorage-service';
 import { RegisterationService } from './service/student/registeration.service';
+import { TrainingDataComponent } from './landing/coordinator/dashboard/training-data/training-data.component';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { RegisterationService } from './service/student/registeration.service';
     EventComponent,
     CompanyRegisterComponent,
     CompanyFormComponent,
+    TrainingDataComponent,
 
   ],
   imports: [
