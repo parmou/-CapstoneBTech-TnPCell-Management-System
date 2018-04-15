@@ -5,22 +5,8 @@ module.exports = function(app) {
         res.send('success');
     })
 
-    app.post('/student/registration', (req,res) => {
-        var char = new User({
-            name: req.headers.name,
-            
-            rollno: req.headers.rollno,
-            isAdmin: req.headers.isAdmin,
-            email: req.headers.email,
-            
-        });
-        char.save(function(err,char){
-            if(err){
-                console.log(err);
-            }
-            else{
-                res.send(char);
-            }
-        });
+    app.post('/student/registration/company-preference', (req,res) => {
+        /* Add code here for company preference */
+        
     })
 }

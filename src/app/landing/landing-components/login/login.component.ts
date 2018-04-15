@@ -32,17 +32,18 @@ export class LoginComponent implements OnInit {
                         (res) => {
                           console.log(res);
                         },
-                        (error) =>   {console.log('this is error');
+                        (error) =>   {
+                                      console.log('this is error');
                                       console.log(error);
                                     },
                         () => {
-                          this.router.navigate['student/home']; 
+                          this.router.navigate(['/student/home']);
                         }
                       );
   }
 
   login(value: LoginModel){
-    console.log(value);
+    //console.log(value);
     this.loginservice.getRespForLogin(value)
                       .subscribe(
                         (res) => {
@@ -53,7 +54,7 @@ export class LoginComponent implements OnInit {
                           console.log('error');
                         },
                         () => {
-                          this.router.navigate['student/home']; 
+                          this.router.navigate(['/student/home']);
                         }
                       );
   }
