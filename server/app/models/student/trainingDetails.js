@@ -6,3 +6,6 @@ const trainingDetailsSchema = new schema({
     approvalStatus: [String],
     companyResponse: [String]
 })
+
+const TrainingDetails = mongoose.model('trainingDetails', trainingDetailsSchema);
+module.exports = TrainingDetails;
