@@ -44,7 +44,8 @@ import { CompanyFormComponent } from './landing/company/company-form/company-for
 import { BaseService } from './service/student/base.service';
 import { BaseServiceCoordinator} from './service/coordinator/base.service';
 import { LoginService } from './landing/landing-components/service/login.service';
-
+import { StorageServiceModule} from 'angular-webstorage-service';
+import {  StorageService } from 'angular-webstorage-service'
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { LoginService } from './landing/landing-components/service/login.service
     APP_ROUTES_PROVIDER,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    StorageServiceModule
   ],
   providers: [BaseService,BaseServiceCoordinator, LoginService],
   bootstrap: [AppComponent]

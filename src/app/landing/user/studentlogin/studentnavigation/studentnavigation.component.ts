@@ -11,5 +11,6 @@ export class StudentnavigationComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }

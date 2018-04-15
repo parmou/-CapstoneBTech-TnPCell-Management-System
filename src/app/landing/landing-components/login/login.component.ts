@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { BaseService } from '../../../service/student/base.service';
 import { LoginService } from '../service/login.service';
 import { Router } from '@angular/router';
 import { FormModel } from '../login/form.model';
 import { LoginModel } from '../login/login.model';
-
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   isValid = true;
   iserror = false;
   registered = true;
-  data;
-  constructor(private loginservice : LoginService, private router: Router) { }
+  response: any = null;
+
+  public data:any=[]
+  constructor(private loginservice : LoginService, private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
 
 
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit {
     this.loginservice.getRespForSignup(value)
                       .subscribe(
                         (res) => {
+                          
                           console.log(res);
                         },
                         (error) =>   {
@@ -37,6 +40,8 @@ export class LoginComponent implements OnInit {
                                       console.log(error);
                                     },
                         () => {
+                          
+
                           this.router.navigate(['/student/home']);
                         }
                       );
@@ -47,13 +52,19 @@ export class LoginComponent implements OnInit {
     this.loginservice.getRespForLogin(value)
                       .subscribe(
                         (res) => {
-                          this.data = res;
-                          
+                          //this.data = res;
+                          this.response = res;
                         },
                         (error) => {
                           console.log('error');
                         },
                         () => {
+                          this.storage.set('name',this.response.name);
+                          this.storage.set('email', this.response.email);
+                          this.storage.set('rollno', this.response.rollno);
+
+                          console.log(this.storage.get('name'));
+
                           this.router.navigate(['/student/home']);
                         }
                       );
