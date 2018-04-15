@@ -1,4 +1,5 @@
 const CompanyPreference = require('../../models/student/companyPreferences');
+const TrainingDetails = require('../../models/student/trainingDetails');
 const User =require('../../models/User.js');
 module.exports = function(app) {
     
@@ -8,21 +9,27 @@ module.exports = function(app) {
 
     app.post('/student/registration/company-preference', (req,res) => {
         /* Add code here for company preference */
-        var company1 = req.body.instituteName1 + "/" + req.body.instituteAddress1;
-        var company2 = req.body.instituteName2 + "/" + req.body.instituteAddress2;
-        var company3 = req.body.instituteName3 + "/" + req.body.instituteAddress3;
-        /* store these vars in your database*/
-        var preference = new CompanyPreference({
-            preference1: company1,
-            preference2: company2,
-            preference3: company3
+     
+        var data = [];
+        var field1 = "" + req.body[0];
+        var field2 = "" + req.body[1];
+        var field3 = "" + req.body[2];
+
+        data.push(field1);
+        data.push(field2);
+        data.push(field3);
+
+        var preference = new TrainingDetails({
+            comanyPreference : data,
+            approvalStatus : ["hcvjc"],
+            companyResponse : ["hcbjsbhcj"]
         })
         preference.save().then(function(err){
             if(err){
                 res.send('database-error')
             }
             else {
-                res.send(student);
+                res.send(preference);
             }
         })
         res.send('success');

@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class PreferenceComponent implements OnInit {
 
+  preferences: String[] = [];
+
   constructor( private registerationService : RegisterationService) {}
 
   ngOnInit() {
@@ -22,8 +24,12 @@ export class PreferenceComponent implements OnInit {
     this.company1 = value.instituteName1 + "/" + value.instituteAddress1;
     this.company2 = value.instituteName2 + "/" + value.instituteAddress2;
     this.company3 = value.instituteName3 + "/" + value.instituteAddress3;
-    
-    this.registerationService.postPreferences(value)
+
+    this.preferences.push(this.company1);
+    this.preferences.push(this.company2);
+    this.preferences.push(this.company3);
+
+    this.registerationService.postPreferences(this.preferences)
                                             .subscribe(
                                               (res) => {
                                                 console.log(res);
@@ -32,6 +38,9 @@ export class PreferenceComponent implements OnInit {
                                                 console.log('this is error');
                                                 console.log(error);
                                               },
+                                              () => {
+                                                this.preferences = [];
+                                              }
                                             );
 
   }
