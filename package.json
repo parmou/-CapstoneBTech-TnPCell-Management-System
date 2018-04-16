@@ -1,15 +1,14 @@
-    {
+{
   "name": "project",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run build",
     "build": "ng build && node server/server.js",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "start": "npm run build"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +21,7 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "@google-cloud/storage": "^1.6.0",
     "angular-webstorage-service": "^1.0.2",
     "body-parser": "^1.18.2",
     "core-js": "^2.4.1",
