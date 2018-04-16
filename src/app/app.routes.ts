@@ -12,6 +12,7 @@ import { EventComponent } from './landing/coordinator/dashboard/event/event.comp
 import { LoginComponent } from './landing/landing-components/login/login.component';
 import { CompanyRegisterComponent} from './landing/company/company-register/company-register.component';
 import { DashboardComponent } from './landing/coordinator/dashboard/dashboard.component';
+import { TrainingDataComponent } from './landing/coordinator/dashboard/training-data/training-data.component';
 
 const routes:Routes = [
     {
@@ -62,6 +63,10 @@ const routes:Routes = [
             {
                 path: "event",
                 component: EventComponent
+            },
+            {
+                path: "training-data",
+                component: TrainingDataComponent
             }
         ]
     },

@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class PreferenceComponent implements OnInit {
 
+  preferences: String[] = [];
+
   constructor( private registerationService : RegisterationService) {}
 
   ngOnInit() {
@@ -29,6 +31,9 @@ export class PreferenceComponent implements OnInit {
                                                 console.log('this is error');
                                                 console.log(error);
                                               },
+                                              () => {
+                                                this.preferences = [];
+                                              }
                                             );
 
   }

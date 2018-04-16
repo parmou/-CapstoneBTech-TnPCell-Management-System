@@ -44,7 +44,9 @@ import { CompanyFormComponent } from './landing/company/company-form/company-for
 import { BaseService } from './service/student/base.service';
 import { BaseServiceCoordinator} from './service/coordinator/base.service';
 import { LoginService } from './landing/landing-components/service/login.service';
+import { StorageServiceModule} from 'angular-webstorage-service';
 import { RegisterationService } from './service/student/registeration.service';
+import { TrainingDataComponent } from './landing/coordinator/dashboard/training-data/training-data.component';
 
 
 @NgModule({
@@ -82,6 +84,7 @@ import { RegisterationService } from './service/student/registeration.service';
     EventComponent,
     CompanyRegisterComponent,
     CompanyFormComponent,
+    TrainingDataComponent,
 
   ],
   imports: [
@@ -89,7 +92,8 @@ import { RegisterationService } from './service/student/registeration.service';
     APP_ROUTES_PROVIDER,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    StorageServiceModule
   ],
   providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService],
   bootstrap: [AppComponent]

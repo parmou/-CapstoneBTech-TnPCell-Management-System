@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({secret: 'ssshhhhh'}));
 
 //connect to database
-mongoose.connect(configDb.url);
+mongoose.connect(configDb.uri);
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname,'../../', 'dist')));

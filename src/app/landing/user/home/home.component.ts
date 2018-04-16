@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  username: String;
+  email: String;
+  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
   ngOnInit() {
+    this.username = this.storage.get('name');
+    this.email = this.storage.get('email');
   }
 
 }

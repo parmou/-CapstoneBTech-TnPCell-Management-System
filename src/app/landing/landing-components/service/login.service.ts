@@ -22,8 +22,8 @@ export class LoginService {
     });
      return this.http.post(this.baseUrl+'student/signup',obj, options)
     .map((response: Response) => {
-      
-      return response;
+      const result = response.json();
+      return result;
     })
     .catch((error: Response | any) => {
       console.log(error.statusText);
@@ -39,11 +39,11 @@ export class LoginService {
     let options = new RequestOptions({
       headers: headers,
     });
-   
+    console.log(obj);
      return this.http.post(this.baseUrl+'student/login',obj, options)
     .map((response: Response) => {
-      
-      return response;
+      const result = response.json();
+      return result;
     })
     .catch((error: Response | any) => {
       console.log(error.statusText);

@@ -7,7 +7,6 @@ module.exports = function(app) {
     })
 
     app.post('/student/registration/company-preference', (req,res) => {
-        console.log(req.body);
         /* Add code here for company preference */
         var details = new trainingDetails({
             companyPreference: req.body
