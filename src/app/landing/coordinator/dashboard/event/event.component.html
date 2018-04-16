@@ -54,37 +54,37 @@
   <div class="col-lg-12">
     <div class="well">
           <h3>Create an Event</h3>
-          <form>
+          <form #eventForm="ngForm" (ngSubmit)="addEvent(eventForm.value); eventForm.reset();">
             <header>
                 <div class="form-group">
-                    <label for="inputInstititue">Event Name</label>
-                    <input type="text" name="inputInstitituename" placeholder="Event Name" #eventName>
+                    <label for="eventName">Event Name</label>
+                    <input type="text" name="eventName" placeholder="Event Name" #eventName ngModel required>
                 </div>
             </header>
             
             
-          <div class="form-group">
-            <h5>Now Add Important Fields As Necessary</h5>
-            <div *ngFor="let number of times; let i = index">
-              <label for="inputInstititue">{{number.type}}</label>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="remove(i)">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              <input type="text" name="inputInstititueaddress" placeholder="Type Here">
+            <div class="form-group">
+              <h5>Now Add Important Fields As Necessary</h5>
+              <div *ngFor="let number of times; let i = index">
+                <label for="value">{{number.type}}</label>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="remove(i)">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                <input type="text" name="value" placeholder="Value here" ngModel required>
+              </div>
             </div>
-          </div>
-          <input type="text" name="inputInstititueaddress" style="width:40%;" placeholder="Type of Data" #type required>
-          <button type="submit" class="btn btn-primary end" (click)="add(type.value)">Add More Fields</button>
-
+            <input type="text" name="type" style="width:40%;" placeholder="Type of Data" #type ngModel required>
+            <button type="button" class="btn btn-primary end" (click)="add(type.value)">Add More Fields</button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
           </form>
           </div>
       </div>
     </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="addEvent(eventName.val)">Save changes</button>
-      </div>
+      
     </div>
   </div>
 </div>
