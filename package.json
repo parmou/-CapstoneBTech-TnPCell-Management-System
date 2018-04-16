@@ -28,12 +28,12 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "mdbootstrap": "^4.4.4",
-    "mongoose": "^5.0.8",
+    "mongoose": "^5.0.14",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/cli": "1.5.4",
+    "@angular/cli": "^1.5.4",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
     "@types/jasmine": "~2.5.53",
