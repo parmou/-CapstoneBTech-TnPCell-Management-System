@@ -1,78 +1,151 @@
-<div class="container">
 
+<div class="row" style="margin: 3%">
 
-  <div class="col-md-12 col-sm-12">
-    <h3>Data</h3>
-    <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
-      <div class="panel">
-        <div class="panel-heading" role="tab" id="headingOne">
-          <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Collapsible item #1
-        </a>
-      </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-          <div class="panel-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-          </div>
-        </div>
-      </div>
-      <!-- end of panel -->
+    <div class="col-md-6">
 
-      <div class="panel">
-        <div class="panel-heading" role="tab" id="headingTwo">
-          <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Collapsible item #2
-        </a>
-      </h4>
-        </div>
-        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-          <div class="panel-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-          </div>
-        </div>
-      </div>
-      <!-- end of panel -->
+        <!--Table-->
+        <table class="table table-hover table-responsive">
 
-      <div class="panel">
-        <div class="panel-heading" role="tab" id="headingThree">
-          <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible item #3
-        </a>
-      </h4>
-        </div>
-        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-          <div class="panel-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-          </div>
-        </div>
-      </div>
-      <!-- end of panel -->
+            <!--Table head-->
+            <thead>
+                 <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Roll Number</th>
+                    <th>Branch</th>
+                    <th>Year</th>
+                    <th>Coordinator Status</th>
+                    <th>Show More Details</th>
+                 </tr>
+            </thead>
+            <!--Table head-->
 
-      <div class="panel">
-        <div class="panel-heading" role="tab" id="headingFour">
-          <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-          Collapsible item #4
-        </a>
-      </h4>
-        </div>
-        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-          <div class="panel-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-          </div>
-        </div>
-      </div>
-      <!-- end of panel -->
+            <!--Table body-->
+            <tbody>
+                <tr *ngFor="let data of data; let i = index" >
+                    <th scope="row" >{{i+1}}</th>
+                    <td>{{data._creator.name}}</td>
+                    <td>{{data._creator.rollno}}</td>
+                    <td>{{data.branch}}</td>
+                    <td>{{data.year}}</td>
+                    <td><button type="button" class="btn btn-primary btn-rounded btn-sm my-0" (click)="changeCoordinatorStatus(data._creator.isCoordinator,i)">{{data._creator.isCoordinator}}</button></td>
+                    <td><button type="button" class="btn btn-danger btn-rounded btn-sm my-0" (click)="setUserData(i)">Show More</button>
+                </tr>
+            </tbody>
+            <!--Table body-->
+
+        </table>
+        <!--Table-->
+    </div>
+
+    <div class="col-md-6">
+        
+
+        <ul class="nav md-pills nav-justified pills-secondary">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#panel4" role="tab">Active</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel11" role="tab">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel12" role="tab">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel13" role="tab">Help</a>
+    </li>
+</ul>
+
+<!-- Tab panels -->
+<div class="tab-content">
+
+    <!--Panel 1-->
+    <div class="tab-pane fade in show active" id="panel11" role="tabpanel">
+        <br>
+
+        <h3>{{userData._creator.name}}</h3>
+        <hr>
+        <h4>Company Preference List</h4>
+        
+        <!--Table-->
+        <table class="table table-hover table-responsive">
+
+            <!--Table head-->
+            <thead>
+                 <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                 </tr>
+            </thead>
+            <!--Table head-->
+
+            <!--Table body-->
+            <tbody>
+                <tr *ngFor="let data of userData._training.companyPreference; let i = index" >
+                    <th scope="row" >{{i+1}}</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td><button type="button" class="btn btn-primary btn-rounded btn-sm my-0">-</button></td>
+                </tr>
+            </tbody>
+            <!--Table body-->
+
+        </table>
+        <!--Table-->
+
+        <hr>
+        <h4>Approval Status</h4>
+
+        <hr>
+        <h4>Company Response</h4>
+
 
     </div>
-    <!-- end of #accordion -->
+    <!--/.Panel 1-->
 
-  </div>
-  <!-- end of wrap -->
+    <!--Panel 2-->
+    <div class="tab-pane fade" id="panel12" role="tabpanel">
+        <br>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+            reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+            porro voluptate odit minima.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+            reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+            porro voluptate odit minima.</p>
+
+    </div>
+    <!--/.Panel 2-->
+
+    <!--Panel 3-->
+    <div class="tab-pane fade" id="panel13" role="tabpanel">
+        <br>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+            reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+            porro voluptate odit minima.</p>
+
+    </div>
+    <!--/.Panel 3-->
+
+    <!--Panel 4-->
+    <div class="tab-pane fade" id="panel14" role="tabpanel">
+        <br>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+            reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+            porro voluptate odit minima.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+            reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+            porro voluptate odit minima.</p>
+
+    </div>
+    <!--/.Panel 4-->
 
 </div>
-<!-- end of container -->
+
+    </div>
+</div>
+

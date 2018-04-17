@@ -3,10 +3,11 @@ const Schema = mongoose.Schema
 
 const userSchema = new Schema({
     name: String,
-    rollno: String,
+    rollno: {type : String, unique : true},
     password: String,
-    isCoordinator: Boolean
-});
+    isCoordinator: Boolean,
+    _training: {type : Schema.Types.ObjectId, ref: 'trainingDetails'} 
+   });
 
 const User = mongoose.model('user', userSchema);
 module.exports = User;

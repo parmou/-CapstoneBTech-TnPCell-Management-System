@@ -13,6 +13,7 @@ import { LoginComponent } from './landing/landing-components/login/login.compone
 import { CompanyRegisterComponent} from './landing/company/company-register/company-register.component';
 import { DashboardComponent } from './landing/coordinator/dashboard/dashboard.component';
 import { TrainingDataComponent } from './landing/coordinator/dashboard/training-data/training-data.component';
+import { SearchFormComponent } from './landing/coordinator/dashboard/search-form/search-form.component'
 
 const routes:Routes = [
     {
@@ -67,6 +68,10 @@ const routes:Routes = [
             {
                 path: "training-data",
                 component: TrainingDataComponent
+            },
+            {
+                path: "search-form",
+                component: SearchFormComponent
             }
         ]
     },

@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.username = this.storage.get('name');
-    this.email = this.storage.get('email');
+    this.email = this.storage.get('isCoordinator');
   }
 
 }

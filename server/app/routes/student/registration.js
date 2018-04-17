@@ -8,17 +8,30 @@ module.exports = function(app) {
 
     app.post('/student/registration/company-preference', (req,res) => {
         /* Add code here for company preference */
-        var details = new trainingDetails({
-            companyPreference: req.body
-        })
-        details.save().then(function(err){
-            if(err){
-                res.send('db-error');
-            }
-            else{
+
+        User.findOne({rollno : req.body[3]})
+            .populate('_training')
+            .exec(function(err, details) {
+                if(err) res.send(err)
+                    var array = [];
+
+                    array.push(req.body[0]);
+                    array.push(req.body[1]);
+                    array.push(req.body[2]);
+                    console.log(array);
+                    console.log(details);
+
+                trainingDetails.findOneAndUpdate({_id : details._training._id},{$set : {companyPreference : array}}, (err, training) => {
+                    if (err) res.send(err);
+                    training.companyPreference = array;
+                })
+
+                details._training.companyPreference = array;
+
                 res.send(details);
-            }
-        })
-        res.send('success');
+            })
+
+            
+        
     })
 }
