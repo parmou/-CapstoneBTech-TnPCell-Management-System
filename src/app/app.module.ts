@@ -37,7 +37,8 @@ import { DashboardComponent } from './landing/coordinator/dashboard/dashboard.co
 import { EventComponent } from './landing/coordinator/dashboard/event/event.component';
 import { CompanyRegisterComponent } from './landing/company/company-register/company-register.component';
 import { CompanyFormComponent } from './landing/company/company-form/company-form.component';
-
+import { TrainingDataComponent } from './landing/coordinator/dashboard/training-data/training-data.component';
+import { SearchFormComponent } from './landing/coordinator/dashboard/search-form/search-form.component';
 
 
 /* Service import  */
@@ -46,8 +47,7 @@ import { BaseServiceCoordinator} from './service/coordinator/base.service';
 import { LoginService } from './landing/landing-components/service/login.service';
 import { StorageServiceModule} from 'angular-webstorage-service';
 import { RegisterationService } from './service/student/registeration.service';
-import { TrainingDataComponent } from './landing/coordinator/dashboard/training-data/training-data.component';
-
+import{ SearchFormServiceService } from './service/coordinator/search-form-service.service'
 
 @NgModule({
   declarations: [
@@ -85,6 +85,7 @@ import { TrainingDataComponent } from './landing/coordinator/dashboard/training-
     CompanyRegisterComponent,
     CompanyFormComponent,
     TrainingDataComponent,
+    SearchFormComponent,
 
   ],
   imports: [
@@ -95,7 +96,7 @@ import { TrainingDataComponent } from './landing/coordinator/dashboard/training-
     HttpModule,
     StorageServiceModule
   ],
-  providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService],
+  providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService, SearchFormServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

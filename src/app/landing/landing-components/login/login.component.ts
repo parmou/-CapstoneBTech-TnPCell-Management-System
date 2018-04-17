@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
+    
   }
 
   register(){
@@ -60,7 +61,7 @@ export class LoginComponent implements OnInit {
                         },
                         () => {
                           this.storage.set('name',this.response.name);
-                          this.storage.set('email', this.response.email);
+                          this.storage.set('isCoordinator', this.response.isCoordinator);
                           this.storage.set('rollno', this.response.rollno);
 
                           console.log(this.storage.get('name'));

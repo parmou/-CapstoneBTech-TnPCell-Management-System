@@ -16,7 +16,7 @@ module.exports = function(app) {
     require('./coordinator/base')(app);
     require('./company/base')(app);
     require('./company/register')(app);
-
+    require('./coordinator/student-training-details')(app);
 
     // Catch all other routes and return the index file
     app.get('*', (req, res) => {
