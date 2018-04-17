@@ -58,7 +58,7 @@
             <header>
                 <div class="form-group">
                     <label for="eventName">Event Name</label>
-                    <input type="text" name="eventName" placeholder="Event Name" #eventName ngModel required>
+                    <input type="text" name="eventName" placeholder="Event Name" #eventName="ngModel" required>
                 </div>
             </header>
             
@@ -70,11 +70,12 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="remove(i)">
                     <span aria-hidden="true">&times;</span>
                   </button>
-                <input type="text" name="value" placeholder="Value here" ngModel required>
+                <input type="text" name="value" placeholder="Value here" #value1="ngModel" required>
+                <!-- value1 can be accessed from here -->
               </div>
             </div>
-            <input type="text" name="type" style="width:40%;" placeholder="Type of Data" #type ngModel required>
-            <button type="button" class="btn btn-primary end" (click)="add(type.value)">Add More Fields</button>
+            <input type="text" name="type" style="width:40%;" placeholder="Type of Data" #type="ngModel" required>
+            <button type="button" class="btn btn-primary end" (click)="add(type.value,value1.value)">Add More Fields</button>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary">Save changes</button>

@@ -11,9 +11,10 @@ import { EventModel } from './event.model';
 export class EventComponent implements OnInit {
   times : any[] = [ 
     {
-      "type" : "date"
+      "type" : "date",
+      "value": ""
     }
-     
+    
   ];
 
   events : any[] = [1];
@@ -23,8 +24,13 @@ export class EventComponent implements OnInit {
     
   }
 
-  add(type : String) {
-    this.times.push({"type" : type});
+  rand(type: String)
+  {
+    console.log(type);
+  }
+
+  add(type : String,value: String) {
+    this.times.push({"type" : type,"value": value});
     this.events.push(1);
   }
   remove(position : number) {
