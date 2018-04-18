@@ -25,7 +25,7 @@ export class LoginService {
      return this.http.post(this.baseUrl+'student/signup',obj, options)
     .map((response: Response) => {
       this.spinnerService.hide('mySpinner');
-      return response;
+      return response.json();
     })
     .catch((error: Response | any) => {
       console.log(error.statusText);
@@ -46,7 +46,7 @@ export class LoginService {
      return this.http.post(this.baseUrl+'student/login',obj, options)
     .map((response: Response) => {
       this.spinnerService.hide('mySpinner2');
-      return response;
+      return response.json();
     })
     .catch((error: Response | any) => {
       console.log(error.statusText);

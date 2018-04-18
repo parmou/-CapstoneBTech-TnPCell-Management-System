@@ -59,16 +59,16 @@ export class LoginComponent implements OnInit {
     this.loginservice.getRespForLogin(value)
                       .subscribe(
                         (res) => {
-                          //this.data = res;
+                          console.log(res);
                           this.response = res;
                         },
                         (error) => {
                           console.log('error');
                         },
                         () => {
-                          this.storage.set('name',this.response.name);
-                          this.storage.set('isCoordinator', this.response.isCoordinator);
-                          this.storage.set('rollno', this.response.rollno);
+                          this.storage.set('name',this.response._creator.name);
+                          this.storage.set('isCoordinator', this.response._creator.isCoordinator);
+                          this.storage.set('rollno', this.response._creator.rollno);
 
                           console.log(this.storage.get('name'));
 

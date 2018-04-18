@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FileUploadService } from '../../../../service/student/file-upload.service';
 import { FileUpload } from '../../../../service/student/fileupload';
+import { DataModel } from './app.model';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import { RegisterationService } from '../../../../service/student/registeration.service';
+
 
 @Component({
   selector: 'app-company-approval',
@@ -13,7 +17,7 @@ export class CompanyApprovalComponent implements OnInit {
   currentFileUpload: FileUpload
   progress: {percentage: number} = {percentage: 0}
 
-  constructor(private uploadService: FileUploadService) { }
+  constructor(private uploadService: FileUploadService, @Inject(LOCAL_STORAGE) private storage: WebStorageService, private registration : RegisterationService) { }
 
   ngOnInit() {
   }
@@ -28,5 +32,28 @@ export class CompanyApprovalComponent implements OnInit {
  
     this.currentFileUpload = new FileUpload(file);
     this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
+  }
+
+  sendData(obj : DataModel) {
+    let array : any = [];
+    array.push(obj.inputInstitituename);
+    array.push(obj.inputInstititueaddress);
+    array.push(obj.inputStartDate);
+    array.push(obj.inputEndDate);
+    array.push(this.uploadService.getFileDownloadURL());
+    array.push(this.storage.get('rollno'));
+
+    this.registration.postCompanyData(array).subscribe(
+      (res) => {
+        
+      },
+      (err) => {
+
+      },
+      () => {
+        console.log('done!');
+      }
+    )
+    
   }
 }
