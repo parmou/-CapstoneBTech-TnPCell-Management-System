@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase : {
+    apiKey: "AIzaSyCqF99Hh63ld4p7rYB180fjXazzSChugLM",
+    authDomain: "tnpcell-management-system.firebaseapp.com",
+    databaseURL: "https://tnpcell-management-system.firebaseio.com",
+    projectId: "tnpcell-management-system",
+    storageBucket: "gs://tnpcell-management-system.appspot.com/",
+    messagingSenderId: "207379659986"
+  }
 };

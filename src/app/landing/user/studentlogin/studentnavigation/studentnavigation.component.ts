@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Inject } from '@angular/core';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-studentnavigation',
   templateUrl: './studentnavigation.component.html',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentnavigationComponent implements OnInit {
 
-  constructor() { }
+  isCoordinator : boolean = false;
+
+  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService, private router : Router) { }
 
   ngOnInit() {
+
+    this.isCoordinator = this.storage.get('isCoordinator');
+    
+  }
+
+  logout() {
+    this.storage.remove('name');
+    this.storage.remove('rollno');
+    this.storage.remove('isCoordinator');
+    this.router.navigate(['/']);
   }
   
 

@@ -39,6 +39,28 @@
 <body style="margin:0%;">
   <app-root></app-root>
 
+
+<!-- Firebase Configuration -->
+
+
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCqF99Hh63ld4p7rYB180fjXazzSChugLM",
+    authDomain: "tnpcell-management-system.firebaseapp.com",
+    databaseURL: "https://tnpcell-management-system.firebaseio.com",
+    projectId: "tnpcell-management-system",
+    storageBucket: "gs://tnpcell-management-system.appspot.com/",
+    messagingSenderId: "207379659986"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+
+
   <script>
     var current = null;
 document.querySelector('#email').addEventListener('focus', function(e) {

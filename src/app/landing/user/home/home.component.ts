@@ -9,11 +9,15 @@ import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 export class HomeComponent implements OnInit {
   username: String;
   email: String;
-  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
-
-  ngOnInit() {
+  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService) {
     this.username = this.storage.get('name');
     this.email = this.storage.get('isCoordinator');
+   }
+
+  ngOnInit() {
+   this.username = this.storage.get('name');
+    this.email = this.storage.get('isCoordinator');
+    
   }
 
 }

@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   iserror = false;
   registered = true;
   response: any = null;
+  signupResponse: any = null;
 
   public data:any=[]
   constructor(private loginservice : LoginService,private spinnerService: SpinnerService, private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
@@ -43,7 +44,9 @@ export class LoginComponent implements OnInit {
                                       console.log(error);
                                     },
                         () => {
-                          
+                          this.storage.set('name',this.response.name);
+                          this.storage.set('isCoordinator', this.response.isCoordinator);
+                          this.storage.set('rollno', this.response.rollno);
 
                           this.router.navigate(['/student/home']);
                         }
@@ -51,6 +54,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(value: LoginModel){
+
     //console.log(value);
     this.loginservice.getRespForLogin(value)
                       .subscribe(

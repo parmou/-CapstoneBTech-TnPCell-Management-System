@@ -41,6 +41,11 @@ import { TrainingDataComponent } from './landing/coordinator/dashboard/training-
 import { SearchFormComponent } from './landing/coordinator/dashboard/search-form/search-form.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { environment } from '../environments/environment';
+
 /* Service import  */
 import { BaseService } from './service/student/base.service';
 import { BaseServiceCoordinator} from './service/coordinator/base.service';
@@ -49,6 +54,7 @@ import { StorageServiceModule} from 'angular-webstorage-service';
 import { RegisterationService } from './service/student/registeration.service';
 import{ SearchFormServiceService } from './service/coordinator/search-form-service.service';
 import { SpinnerService } from './spinner/spinner.service';
+import {FileUploadService} from './service/student/file-upload.service';
 
 @NgModule({
   declarations: [
@@ -97,14 +103,10 @@ import { SpinnerService } from './spinner/spinner.service';
     ReactiveFormsModule,
     HttpModule,
     StorageServiceModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
-  providers: [BaseService,
-    BaseServiceCoordinator,
-    LoginService,
-    RegisterationService,
-    SearchFormServiceService,
-    SpinnerService
-  ],
+  providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService, SearchFormServiceService, FileUploadService,SpinnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
