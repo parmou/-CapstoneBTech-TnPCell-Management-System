@@ -40,6 +40,10 @@ import { CompanyFormComponent } from './landing/company/company-form/company-for
 import { TrainingDataComponent } from './landing/coordinator/dashboard/training-data/training-data.component';
 import { SearchFormComponent } from './landing/coordinator/dashboard/search-form/search-form.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { environment } from '../environments/environment';
 
 /* Service import  */
 import { BaseService } from './service/student/base.service';
@@ -48,6 +52,7 @@ import { LoginService } from './landing/landing-components/service/login.service
 import { StorageServiceModule} from 'angular-webstorage-service';
 import { RegisterationService } from './service/student/registeration.service';
 import{ SearchFormServiceService } from './service/coordinator/search-form-service.service'
+import {FileUploadService} from './service/student/file-upload.service';
 
 @NgModule({
   declarations: [
@@ -94,9 +99,11 @@ import{ SearchFormServiceService } from './service/coordinator/search-form-servi
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    StorageServiceModule
+    StorageServiceModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
-  providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService, SearchFormServiceService],
+  providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService, SearchFormServiceService, FileUploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 
-<div class="row" style="margin: 3%">
+<div class="row" style="margin: 2%">
 
     <div class="col-md-6">
 
@@ -21,8 +21,8 @@
             <!--Table head-->
 
             <!--Table body-->
-            <tbody>
-                <tr *ngFor="let data of data; let i = index" >
+            <tbody *ngIf= "userPresent">
+                <tr  *ngFor="let data of data; let i = index" >
                     <th scope="row" >{{i+1}}</th>
                     <td>{{data._creator.name}}</td>
                     <td>{{data._creator.rollno}}</td>
@@ -38,22 +38,20 @@
         <!--Table-->
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6" style="margin-left: 1%">
         
 
         <ul class="nav md-pills nav-justified pills-secondary">
     <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#panel4" role="tab">Active</a>
+        <a class="nav-link active" data-toggle="tab" href="#panel11" role="tab">Company Preference List</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#panel11" role="tab">Link</a>
+        <a class="nav-link" data-toggle="tab" href="#panel12" role="tab">Approval Status</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#panel12" role="tab">Link</a>
+        <a class="nav-link" data-toggle="tab" href="#panel13" role="tab">Company Response</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#panel13" role="tab">Help</a>
-    </li>
+    
 </ul>
 
 <!-- Tab panels -->
@@ -63,7 +61,7 @@
     <div class="tab-pane fade in show active" id="panel11" role="tabpanel">
         <br>
 
-        <h3>{{userData._creator.name}}</h3>
+        <h3 *ngIf= "userPresent">{{userData._creator.name}}</h3>  <button *ngIf= "userPresent" type="button" class="btn btn-danger btn-rounded btn-sm my-0" (click)="deleteUser()">Delete User</button>
         <hr>
         <h4>Company Preference List</h4>
         
@@ -82,12 +80,12 @@
             <!--Table head-->
 
             <!--Table body-->
-            <tbody>
+            <tbody *ngIf= "userPresent">
                 <tr *ngFor="let data of userData._training.companyPreference; let i = index" >
                     <th scope="row" >{{i+1}}</th>
-                    <td>1</td>
-                    <td>2</td>
-                    <td><button type="button" class="btn btn-primary btn-rounded btn-sm my-0">-</button></td>
+                    <td>{{data}}</td>
+                    <td>{{data}}</td>
+                    <td><button type="button" class="btn btn-primary btn-rounded btn-sm my-0" (click)="approveCompany(i)" >-</button></td>
                 </tr>
             </tbody>
             <!--Table body-->
@@ -95,11 +93,10 @@
         </table>
         <!--Table-->
 
-        <hr>
-        <h4>Approval Status</h4>
+        <h4 *ngIf = "error" style="color: red">Sorry, Error Occurred </h4>
 
-        <hr>
-        <h4>Company Response</h4>
+     
+        
 
 
     </div>
@@ -108,38 +105,28 @@
     <!--Panel 2-->
     <div class="tab-pane fade" id="panel12" role="tabpanel">
         <br>
+        
+        <hr>
+        <h4 >Approval Status</h4>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-            reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-            porro voluptate odit minima.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-            reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-            porro voluptate odit minima.</p>
+        <h5> Company Approved! </h5>
+        <h5> Company Name: {{approvedCompanyIndex}} </h5>
+        
+
+      
 
     </div>
     <!--/.Panel 2-->
 
-    <!--Panel 3-->
-    <div class="tab-pane fade" id="panel13" role="tabpanel">
-        <br>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-            reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-            porro voluptate odit minima.</p>
-
-    </div>
+    
     <!--/.Panel 3-->
 
     <!--Panel 4-->
-    <div class="tab-pane fade" id="panel14" role="tabpanel">
+    <div class="tab-pane fade" id="panel13" role="tabpanel">
         <br>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-            reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-            porro voluptate odit minima.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-            reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-            porro voluptate odit minima.</p>
+        <hr>
+        <h4>Company Response</h4>
 
     </div>
     <!--/.Panel 4-->

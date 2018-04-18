@@ -21,7 +21,8 @@
                  <li><a [routerLink]="['/student/training']" style="color:rgb(255, 255, 255)"><strong>Registration</strong></a></li>
                  <li><a [routerLink]="['/student/profile']" style="color:rgb(255, 255, 255)"><strong>Profile</strong></a></li>
                  <li><a href="#account" style="color:rgb(255, 255, 255)"><strong>Account</strong></a></li>
-                 <li><a style="color:rgb(255, 255, 255)" href="#"><strong>Logout</strong></a></li>
+                 <li><a *ngIf="isCoordinator" [routerLink]="['/coordinator']" style="color:rgb(255, 255, 255)" ><strong>Dashboard</strong></a></li>
+                 <li><a style="color:rgb(255, 255, 255)" (click)="logout()"><strong>Logout</strong></a></li>
             </ul>
 
 

@@ -42,8 +42,8 @@ export class LoginService {
     console.log(obj);
      return this.http.post(this.baseUrl+'student/login',obj, options)
     .map((response: Response) => {
-      const result = response.json();
-      return result;
+      console.log(response.json());
+      return response.json();
     })
     .catch((error: Response | any) => {
       console.log(error.statusText);
