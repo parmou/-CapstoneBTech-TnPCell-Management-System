@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {BaseServiceCoordinator} from '../../../../service/coordinator/base.service'
+import { EventModel } from './event.model';
 
 @Component({
   selector: 'app-event',
@@ -10,9 +11,10 @@ import {BaseServiceCoordinator} from '../../../../service/coordinator/base.servi
 export class EventComponent implements OnInit {
   times : any[] = [ 
     {
-      "type" : "date"
+      "type" : "date",
+      "value": ""
     }
-     
+    
   ];
 
   events : any[] = [1];
@@ -22,15 +24,23 @@ export class EventComponent implements OnInit {
     
   }
 
-  add(type : String) {
-    this.times.push({"type" : type});
+  rand(type: String)
+  {
+    console.log(type);
+  }
+
+  add(type : String,value: String) {
+    this.times.push({"type" : type,"value": value});
     this.events.push(1);
   }
   remove(position : number) {
     this.times.splice(position,1);
   }
 
-  addEvent( eventName: String) {
+  addEvent(eventName: EventModel) {
+    console.log('from angular');
+    console.log(this.times);
+    console.log(eventName);
     /* format the array and pass as a string */
     let details : String;
 
