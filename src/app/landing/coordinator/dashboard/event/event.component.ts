@@ -11,8 +11,8 @@ import { EventModel } from './event.model';
 export class EventComponent implements OnInit {
   times : any[] = [ 
     {
-      "type" : "date",
-      "value": ""
+      "type" : "dummy type",
+      "value": "dummy value"
     }
     
   ];
@@ -38,9 +38,8 @@ export class EventComponent implements OnInit {
   }
 
   addEvent(eventName: EventModel) {
-    console.log('from angular');
-    console.log(this.times);
-    console.log(eventName);
+    var eventname = eventName[0];
+    console.log(eventname);
     /* format the array and pass as a string */
     let details : String;
 

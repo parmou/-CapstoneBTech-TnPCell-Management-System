@@ -39,7 +39,7 @@ import { CompanyRegisterComponent } from './landing/company/company-register/com
 import { CompanyFormComponent } from './landing/company/company-form/company-form.component';
 import { TrainingDataComponent } from './landing/coordinator/dashboard/training-data/training-data.component';
 import { SearchFormComponent } from './landing/coordinator/dashboard/search-form/search-form.component';
-
+import { SpinnerComponent } from './spinner/spinner.component';
 
 /* Service import  */
 import { BaseService } from './service/student/base.service';
@@ -47,7 +47,8 @@ import { BaseServiceCoordinator} from './service/coordinator/base.service';
 import { LoginService } from './landing/landing-components/service/login.service';
 import { StorageServiceModule} from 'angular-webstorage-service';
 import { RegisterationService } from './service/student/registeration.service';
-import{ SearchFormServiceService } from './service/coordinator/search-form-service.service'
+import{ SearchFormServiceService } from './service/coordinator/search-form-service.service';
+import { SpinnerService } from './spinner/spinner.service';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import{ SearchFormServiceService } from './service/coordinator/search-form-servi
     CompanyFormComponent,
     TrainingDataComponent,
     SearchFormComponent,
+    SpinnerComponent,
 
   ],
   imports: [
@@ -94,9 +96,15 @@ import{ SearchFormServiceService } from './service/coordinator/search-form-servi
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    StorageServiceModule
+    StorageServiceModule,
   ],
-  providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService, SearchFormServiceService],
+  providers: [BaseService,
+    BaseServiceCoordinator,
+    LoginService,
+    RegisterationService,
+    SearchFormServiceService,
+    SpinnerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

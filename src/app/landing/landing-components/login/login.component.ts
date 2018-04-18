@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { FormModel } from '../login/form.model';
 import { LoginModel } from '../login/login.model';
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import { SpinnerService } from '../../../spinner/spinner.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +19,7 @@ export class LoginComponent implements OnInit {
   response: any = null;
 
   public data:any=[]
-  constructor(private loginservice : LoginService, private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
+  constructor(private loginservice : LoginService,private spinnerService: SpinnerService, private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
 
 
