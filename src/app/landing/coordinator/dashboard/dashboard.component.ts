@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { BaseServiceCoordinator } from '../../../service/coordinator/base.service'
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private base : BaseServiceCoordinator) { }
 
   ngOnInit() {
   }
 
+  
   
 
 }
