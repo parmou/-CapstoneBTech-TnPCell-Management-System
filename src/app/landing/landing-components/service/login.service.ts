@@ -21,10 +21,10 @@ export class LoginService {
     let options = new RequestOptions({
       headers: headers,
     });
-    this.spinnerService.show('mySpinner');
+    
      return this.http.post(this.baseUrl+'student/signup',obj, options)
     .map((response: Response) => {
-      this.spinnerService.hide('mySpinner');
+      
       return response;
     })
     .catch((error: Response | any) => {
@@ -42,10 +42,10 @@ export class LoginService {
       headers: headers,
     });
     console.log(obj);
-     this.spinnerService.show('mySpinner2');
+     
      return this.http.post(this.baseUrl+'student/login',obj, options)
     .map((response: Response) => {
-      this.spinnerService.hide('mySpinner2');
+      
       return response;
     })
     .catch((error: Response | any) => {

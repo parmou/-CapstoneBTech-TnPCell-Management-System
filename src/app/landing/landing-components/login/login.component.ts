@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.loginservice.getRespForSignup(value)
                       .subscribe(
                         (res) => {
-                          
+                          this.spinnerService.show('mySpinner');
                           console.log(res);
                         },
                         (error) =>   {
@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
                                       console.log(error);
                                     },
                         () => {
+                          this.spinnerService.hide('mySpinner');
                           this.storage.set('name',this.response.name);
                           this.storage.set('isCoordinator', this.response.isCoordinator);
                           this.storage.set('rollno', this.response.rollno);
@@ -59,6 +60,7 @@ export class LoginComponent implements OnInit {
     this.loginservice.getRespForLogin(value)
                       .subscribe(
                         (res) => {
+                          this.spinnerService.show('mySpinner2');
                           //this.data = res;
                           this.response = res;
                         },
@@ -66,6 +68,7 @@ export class LoginComponent implements OnInit {
                           console.log('error');
                         },
                         () => {
+                          this.spinnerService.hide('mySpinner2');
                           this.storage.set('name',this.response.name);
                           this.storage.set('isCoordinator', this.response.isCoordinator);
                           this.storage.set('rollno', this.response.rollno);
