@@ -1,105 +1,45 @@
-<app-studentnavigation></app-studentnavigation>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
-<div class="container" style="margin-top: 10%">
-		<div class="row">
-		<div class="col-lg-4">
-			<div class=" card namecard text-center" >
-			  <img class="card-img-top img-responsive" src="http://aspirehire-co-uk.mysmarterwebsite.co.uk/aspirehire-co-uk/_img/profile.svg" style="" alt="Card image cap">
-			  <hr>
-			  <div class="card-body">
-			    <h2 class="card-title " style="font-size: 1.5em; text-align: center; padding: 5px;">John Doe</h2>
-			    <hr>
-			    <p class="card-text" style="font-size: 1em; text-align: center; padding: 5px;">BRANCH</p>
-			   
-			  </div>
-			</div>
-			<div class=" card namecard  text-center" > 
-			  <div class="card-body">
-			    <h2 class="card-title " style="font-size: 1.5em; text-align: center; padding: 5px;">Bio</h2><hr>
-			    <p class="card-text" style="font-size: 1em; text-align: center; ">Hateful, idiot, not so working and dumb</p>
-			   
-			  </div>
-			</div>	
-		</div>
+<app-studentnavigation ></app-studentnavigation>
 
 
-		<div class="col-lg-8">
-			<div class="card text-center" style="padding: 10px;">
-	<div onclick="function()"><i class="material-icons icon">add</i></div>
-  	<div class="card-header">
-    Experience
-  	<div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <hr >
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <hr >
-  	</div>
-  	</div>
-	</div>
+  <ul class="nav md-pills nav-justified pills-secondary" style="margin-top:5%;">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#panel4" role="tab">User Basic Details</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel11" role="tab">Personal Details</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel12" role="tab">Change Password</a>
+    </li>
+    
+</ul>
 
-	<div class="card text-center customcard ">
-	<div onclick="function()"><i class="material-icons icon">add</i></div>
-  	<div class="card-header">
-    Education
-  	<div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <hr >
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <hr >
-  	</div>
-  	</div>
-	</div>
-	
-	<div class="card text-center customcard ">
-	<div onclick="function()"><i class="material-icons icon">add</i></div>
-  	<div class="card-header">
-    Featured Skills
-  	<div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <hr >
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <hr >
-  	</div>
-  	</div>
-	</div>
-	<div class="card text-center customcard ">
-	<div onclick="function()"><i class="material-icons icon">add</i></div>
-  	<div class="card-header">
-    Accomplishments
-  	<div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <hr >
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <hr >
-  	</div>
-  	</div>
-	</div>
-	<div class="card text-center customcard ">
-	<div onclick="function()"><i class="material-icons icon">add</i></div>
-  	<div class="card-header">
-    Interest
-  	<div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <hr >
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <hr >
-  	</div>
-  	</div>
-	</div>
-		
-		
-	</div>
+<!-- Tab panels -->
+<div class="tab-content">
+
+    <!--Panel 1-->
+    <div class="tab-pane fade in show active" id="panel4" role="tabpanel">
+
+        <app-update-user-details></app-update-user-details>
+
+    </div>
+    <!--/.Panel 1-->
+
+    <!--Panel 2-->
+    <div class="tab-pane fade" id="panel11" role="tabpanel">
+
+        <app-update-personal-details></app-update-personal-details>
+
+    </div>
+    <!--/.Panel 2-->
+
+    <!--Panel 3-->
+    <div class="tab-pane fade" id="panel12" role="tabpanel">
+        <app-update-password></app-update-password>
+
+    </div>
+    <!--/.Panel 3-->
+
+    
 
 </div>
