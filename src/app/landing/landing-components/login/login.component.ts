@@ -38,15 +38,16 @@ export class LoginComponent implements OnInit {
                         (res) => {
                           
                           console.log(res);
+                          this.response = res;
                         },
                         (error) =>   {
                                       console.log('this is error');
                                       console.log(error);
                                     },
                         () => {
-                          this.storage.set('name',this.response.name);
-                          this.storage.set('isCoordinator', this.response.isCoordinator);
-                          this.storage.set('rollno', this.response.rollno);
+                          this.storage.set('name',this.response._creator.name);
+                          this.storage.set('isCoordinator', this.response._creator.isCoordinator);
+                          this.storage.set('rollno', this.response._creator.rollno);
 
                           this.router.navigate(['/student/home']);
                         }
