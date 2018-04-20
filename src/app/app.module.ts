@@ -55,6 +55,10 @@ import { RegisterationService } from './service/student/registeration.service';
 import{ SearchFormServiceService } from './service/coordinator/search-form-service.service';
 import { SpinnerService } from './spinner/spinner.service';
 import {FileUploadService} from './service/student/file-upload.service';
+import { UpdateUserDetailsComponent } from './landing/user/studentprofile/update-user-details/update-user-details.component';
+import { EditDetailsService } from './service/student/edit-details.service';
+import { UpdatePersonalDetailsComponent } from './landing/user/studentprofile/update-personal-details/update-personal-details.component';
+import { UpdatePasswordComponent } from './landing/user/studentprofile/update-password/update-password.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +98,9 @@ import {FileUploadService} from './service/student/file-upload.service';
     TrainingDataComponent,
     SearchFormComponent,
     SpinnerComponent,
+    UpdateUserDetailsComponent,
+    UpdatePersonalDetailsComponent,
+    UpdatePasswordComponent,
 
   ],
   imports: [
@@ -106,7 +113,7 @@ import {FileUploadService} from './service/student/file-upload.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
   ],
-  providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService, SearchFormServiceService, FileUploadService,SpinnerService],
+  providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService, SearchFormServiceService, FileUploadService,SpinnerService, EditDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
