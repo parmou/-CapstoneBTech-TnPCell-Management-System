@@ -4,6 +4,8 @@ const Schema = mongoose.Schema;
 const personalDetailsSchema = new Schema({
     year : String,
     branch : String,
+    resume: String,
+    cgpa: String,
     _creator : {type : Schema.Types.ObjectId, ref : 'user'},
     _training : {type : Schema.Types.ObjectId, ref : 'trainingDetails'} 
 })

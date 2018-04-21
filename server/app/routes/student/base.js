@@ -19,52 +19,77 @@ module.exports = function(app) {
             name: req.body.name,
             rollno: req.body.rollno,
             password: req.body.password,
+            branch: req.body.branch,
+            year: req.body.year,
             isCoordinator: false,
             _training: trainingDetails._id
         })
-        student.save().then(function(err){
-            if(err){
-                res.send('database-error')
-            }
-            
+        student.save((err) => {
 
-            trainingDetails.save().then(function(err){
-                if (err) res.send(err);
-            })
-                var personalDetails = new PersonalDetails({
-                    /* Make user enter his branch and year at the start */
-                    year: "1",
-                    branch: "CSE",
-                    _creator : student._id,
-                    _training : trainingDetails._id
-                })
-
-                
-
-                personalDetails.save().then(function(err) {
-                    if(err) res.send(err);
+            if(err) res.send(err);
+            else {
+                trainingDetails.save((err) => {
+                    if(err) res,send(err);
                     else {
-                        user.findOne({rollno : req.body.rollno}, (err, user) => {
+                         var personalDetails = new PersonalDetails({
+                            /* Make user enter his branch and year at the start */
+                                year: "1",
+                                branch: "CSE",
+                                _creator : student._id,
+                                _training : trainingDetails._id
+                            })
+
+                            personalDetails.save( (err) => {
+                                if(err) res.send(err);
+                                else {
+
+                                    user.findOne({rollno : req.body.rollno}, (err, user) => {
             
-                            if(err) res.send(err);
-                            else {
-                                console.log(user);
-                                PersonalDetails.findOne({_creator : user._id} )
-                                .populate('_training')
-                                .populate('_creator')
-                                .exec(function(err,detail) {
-                                if (err) res.send(err);
-                                console.log(detail);
-                                res.send(detail);
-                })
-            }
-        })
-                    }
+                                    if(err) res.send(err);
+                                    else {
+                                        console.log(user);
+                                        PersonalDetails.findOne({_creator : user._id} )
+                                        .populate('_training')
+                                        .populate('_creator')
+                                        .exec(function(err,detail) {
+                                        if (err) res.send(err);
+                                        console.log(detail);
+                                        res.send(detail);
+                                        })
+                                    }
+                                })
+                            }
+                    })
+                }
+            })
+        }
+
+                        
                     
-                })
+                   
+                        
+                    
+                    
+                
+                    
+                
+
+
                 
             
+               
+
+                
+
+                
         })
+           
+            
+
+            
+                
+            
+        
         
     })
 

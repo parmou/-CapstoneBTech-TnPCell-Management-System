@@ -131,8 +131,8 @@ input::-moz-focus-inner {
   color: #d0d0d2;
 }
 */
-.loader .my-loader {
-  background-color: #D32F2F;
+option{
+  background: #f7f7f7
 }
 .container{
   margin-top: 2%;

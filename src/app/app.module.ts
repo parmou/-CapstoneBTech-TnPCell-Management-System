@@ -39,8 +39,6 @@ import { CompanyRegisterComponent } from './landing/company/company-register/com
 import { CompanyFormComponent } from './landing/company/company-form/company-form.component';
 import { TrainingDataComponent } from './landing/coordinator/dashboard/training-data/training-data.component';
 import { SearchFormComponent } from './landing/coordinator/dashboard/search-form/search-form.component';
-import { SpinnerComponent } from './spinner/spinner.component';
-import { LoadersCssModule } from 'angular2-loaders-css';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -54,8 +52,11 @@ import { LoginService } from './landing/landing-components/service/login.service
 import { StorageServiceModule} from 'angular-webstorage-service';
 import { RegisterationService } from './service/student/registeration.service';
 import{ SearchFormServiceService } from './service/coordinator/search-form-service.service';
-import { SpinnerService } from './spinner/spinner.service';
 import {FileUploadService} from './service/student/file-upload.service';
+import { UpdateUserDetailsComponent } from './landing/user/studentprofile/update-user-details/update-user-details.component';
+import { EditDetailsService } from './service/student/edit-details.service';
+import { UpdatePersonalDetailsComponent } from './landing/user/studentprofile/update-personal-details/update-personal-details.component';
+import { UpdatePasswordComponent } from './landing/user/studentprofile/update-password/update-password.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,9 @@ import {FileUploadService} from './service/student/file-upload.service';
     CompanyFormComponent,
     TrainingDataComponent,
     SearchFormComponent,
-    SpinnerComponent,
+    UpdateUserDetailsComponent,
+    UpdatePersonalDetailsComponent,
+    UpdatePasswordComponent,
 
   ],
   imports: [
@@ -106,9 +109,8 @@ import {FileUploadService} from './service/student/file-upload.service';
     StorageServiceModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    LoadersCssModule
   ],
-  providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService, SearchFormServiceService, FileUploadService,SpinnerService],
+  providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService, SearchFormServiceService, FileUploadService, EditDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

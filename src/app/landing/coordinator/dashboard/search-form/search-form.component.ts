@@ -14,6 +14,8 @@ export class SearchFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  branches = ['CSE', 'ECE', 'ME', 'CE', 'CHE', 'BT', 'BME', 'EE'];
+  years = [1,2,3,4];
   getStudentData(value : AppModel) {
     /**
      * code for AppModel and making request for getting student training details 

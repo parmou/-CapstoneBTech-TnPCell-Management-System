@@ -1,0 +1,27 @@
+<form class="form" #valForm="ngForm" (ngSubmit)="updatePersonalDetails(valForm.value); valForm.reset();">
+  <h2>Update Personal Details</h2>
+
+   <h4>Add the approval File or Certificate</h4>
+              
+                <div *ngIf="currentFileUpload" class="progress">
+	                <div class="progress-bar progress-bar-info progress-bar-striped"
+		              role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+		              aria-valuemin="0" aria-valuemax="100"
+		              [ngStyle]="{width:progress.percentage+'%'}">
+		              {{progress.percentage}}%</div>
+                </div>
+ 
+              <label class="btn btn-default"> <input type="file" (change)="selectFile($event)" required></label>
+ 
+              <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+
+              
+  <p type="CGPA"><input name = "totalCgpa" placeholder="Enter your CGPA till now" ngModel required autofocus/></p>
+  
+  
+ 
+            
+  
+  <button type="submit">Send Message</button>
+</form>
+

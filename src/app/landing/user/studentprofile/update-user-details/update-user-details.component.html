@@ -1,0 +1,14 @@
+<form class="form" #valForm="ngForm" (ngSubmit)="updateBasicDetails(valForm.value); valForm.reset();">
+  <h2>Update Basic Details</h2>
+  <p type="Name:"><input name="name" [(ngModel)]="name" placeholder="Write your name here.." ngModel required autofocus/></p>
+  <p type="Branch:"><!--<input name="branch" placeholder="Let us know your branch" ngModel required />--></p>
+  <select name="branch" ngModel required>
+    <option *ngFor="let branch of branches" value="branch">{{branch}}</option>
+  </select>
+  <p type="Year"><!--<input name="year" placeholder="Write your year here" ngModel required />--></p>
+  <select name="year" ngModel required>
+    <option *ngFor="let year of years" value="year">{{year}}</option>
+  </select>
+  <button type="submit">Update Details</button>
+</form>
+

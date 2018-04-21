@@ -40,11 +40,11 @@
 </div>
 -->
 
-<div *ngIf="show">
   <!--<loaders-css [loader]="'square-spin'" [loaderClass]="'my-loader'"></loaders-css>-->
-  <h1>loading...</h1>
+
+<div *ngIf="show">
+  <img src="../../../../assets/preloader-28.gif" alt="Loading..." height="100%" width="100%"/>
 </div>
-<loaders-css [loader]="'square-spin'" [loaderClass]="'my-loader'"></loaders-css>
 <div *ngIf="!show">
   <div *ngIf="registered">
     <div class="container">
@@ -57,12 +57,7 @@
                   <form class="form-signin" #valForm="ngForm" (ngSubmit)="login(valForm.value); valForm.reset();">
                   <input type="text" class="form-control" placeholder="Roll Number" name="rollno" ngModel required autofocus>
                   <input type="password" class="form-control" placeholder="Password" name="password" ngModel required>
-                  <button class="btn btn-lg btn-primary btn-block" type="submit">
-                      Sign in</button>
-                  <label class="checkbox pull-left">
-                      <input type="checkbox" value="remember-me">
-                      Remember me
-                  </label>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                   <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
                   </form>
               </div>
@@ -85,6 +80,12 @@
                   <form class="form-signin" #val2Form="ngForm" (ngSubmit)="signup(val2Form.value); val2Form.reset();">
                   <input type="text" class="form-control" placeholder="Name" name="name" ngModel required autofocus>
                   <input type="text" class="form-control" placeholder="Roll Number" name="rollno" ngModel required autofocus>
+                  <select class="form-control" name="branch" placeholder="Branch" ngModel required autofocus>
+                    <option *ngFor="let branch of branches" [value]="branch">{{branch}}</option>
+                  </select>
+                  <select class="form-control" name="year" placeholder="Year" ngModel required autofocus>
+                      <option class="form-control" *ngFor="let year of years" [value]="year">{{year}}</option>
+                  </select>
                   <input type="password" class="form-control" placeholder="Password" name="password" ngModel required>
                   <input type="password" class="form-control" placeholder="Re Enter Password" name="password" ngModel required>
                   <button class="btn btn-lg btn-primary btn-block" type="submit">
