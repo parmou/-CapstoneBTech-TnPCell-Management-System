@@ -34,4 +34,23 @@ module.exports = function(app) {
             
         
     })
+
+    app.post('/student/registration/company-response', (req,res) => {
+        console.log(req.body);
+        User.findOne({rollno : req.body[5]}, (err, user) => {
+            if(err) res.send(err);
+
+            else {
+                trainingDetails.findOneAndUpdate({_id : user._training}, {$set : {companyResponse : req.body}}, (err, details) => {
+                if(err) res.send(err);
+
+                else {
+                        res.send('successful');
+                    }
+                })
+            }
+
+            
+        })
+    })
 }

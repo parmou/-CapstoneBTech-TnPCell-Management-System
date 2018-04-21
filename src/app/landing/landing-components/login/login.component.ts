@@ -7,6 +7,7 @@ import { LoginModel } from '../login/login.model';
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 import { SpinnerService } from '../../../spinner/spinner.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   registered = true;
   response: any = null;
   signupResponse: any = null;
+  show= false;
 
   public data:any=[]
   constructor(private loginservice : LoginService,private spinnerService: SpinnerService, private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
@@ -36,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.loginservice.getRespForSignup(value)
                       .subscribe(
                         (res) => {
-                          this.spinnerService.show('mySpinner');
+                          this.show=true;
                           console.log(res);
                         },
                         (error) =>   {
@@ -44,6 +46,7 @@ export class LoginComponent implements OnInit {
                                       console.log(error);
                                     },
                         () => {
+                          this.show=false;
                           this.spinnerService.hide('mySpinner');
                           this.storage.set('name',this.response.name);
                           this.storage.set('isCoordinator', this.response.isCoordinator);
@@ -60,15 +63,20 @@ export class LoginComponent implements OnInit {
     this.loginservice.getRespForLogin(value)
                       .subscribe(
                         (res) => {
-                          this.spinnerService.show('mySpinner2');
+                          console.log('enter');
+                          this.show=true;
+                          //this.spinnerService.show('mySpinner2');
                           //this.data = res;
+                          console.log(res);
                           this.response = res;
                         },
                         (error) => {
                           console.log('error');
                         },
                         () => {
-                          this.spinnerService.hide('mySpinner2');
+                          console.log('exit');
+                          this.show=false;
+                          //this.spinnerService.hide('mySpinner2');
                           this.storage.set('name',this.response.name);
                           this.storage.set('isCoordinator', this.response.isCoordinator);
                           this.storage.set('rollno', this.response.rollno);

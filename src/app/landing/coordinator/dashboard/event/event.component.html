@@ -7,17 +7,19 @@
   <!-- Event List -- >
 
 <div class="row">
-  <div class="col">
+  <div class="col-md-2" >
     <!-- Event Cards -->
-      <div class="card" style="width: 18rem; margin: 2rem;">
+    <div *ngFor="let event of events; let i = index">
+      <div class="card" style="width: 18rem; margin: 2rem;" *ngIf="sizeBoolean" >
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title"></h5>
             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <a href="#" class="card-link">Card link</a>
             <a href="#" class="card-link">Another link</a>
           </div>
       </div>
+    </div>
  
 
 
@@ -54,11 +56,19 @@
   <div class="col-lg-12">
     <div class="well">
           <h3>Create an Event</h3>
-          <form #eventForm="ngForm" (ngSubmit)="addEvent(eventForm.value); eventForm.reset();">
+          <form >
             <header>
                 <div class="form-group">
                     <label for="eventName">Event Name</label>
-                    <input type="text" name="eventName" placeholder="Event Name" #eventName ngModel required>
+                    <input type="text" name="eventName"  [(ngModel)]="eventName" required>
+                </div>
+                  <div class="form-group">
+                    <label for="eventName">Branch</label>
+                    <input type="text" name="branch" [(ngModel)]="branch" required>
+                </div>
+                  <div class="form-group">
+                    <label for="eventName">Year</label>
+                    <input type="text" name="year"  [(ngModel)]="year" required>
                 </div>
             </header>
             
@@ -69,22 +79,23 @@
               <div *ngFor="let number of times; let i = index">
                 <div>
                   <label for="type">{{number.type}}</label>
+                  <input type="text" name="value-{{i}}" [(ngModel)]="times[i].value" required>
                   <br>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="remove(i)">
                       <span aria-hidden="true">&times;</span>
                   </button>
-                  <label for="value">{{number.value}}</label>
+                  
                 </div>  
                 <!--<input type="text" name="value" placeholder="Value here" #value1 ngModel required>-->
                 <!-- value1 can be accessed from here -->
               </div>
             </div>
-            <input type="text" name="type"placeholder="Type of Data" #type ngModel required>
-            <input type="text" name="value" placeholder="Value of Data" #value ngModel required>
-            <button type="button" class="btn btn-primary end" (click)="add(type.value,value.value)">Add More Fields</button>
+            <input type="text" name="type"placeholder="Type of Data" #type required>
+            
+            <button type="button" class="btn btn-primary end" (click)="add(type.value)">Add More Fields</button>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
+              <button type="submit" class="btn btn-primary" (click) = "addEvent()">Save changes</button>
             </div>
           </form>
           </div>
@@ -93,9 +104,9 @@
       </div>
       
     </div>
-  </div>
-</div>
+ 
 
+  
 
 
 

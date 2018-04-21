@@ -40,6 +40,7 @@ import { CompanyFormComponent } from './landing/company/company-form/company-for
 import { TrainingDataComponent } from './landing/coordinator/dashboard/training-data/training-data.component';
 import { SearchFormComponent } from './landing/coordinator/dashboard/search-form/search-form.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { LoadersCssModule } from 'angular2-loaders-css';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -105,6 +106,7 @@ import {FileUploadService} from './service/student/file-upload.service';
     StorageServiceModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    LoadersCssModule
   ],
   providers: [BaseService,BaseServiceCoordinator, LoginService, RegisterationService, SearchFormServiceService, FileUploadService,SpinnerService],
   bootstrap: [AppComponent]

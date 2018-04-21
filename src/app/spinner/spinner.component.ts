@@ -9,23 +9,8 @@ import { SpinnerService } from './spinner.service';
 export class SpinnerComponent implements OnInit, OnDestroy {
 
   @Input() name: String
-  //@Input() loadingImage: string;
- // @Input() show = false;
-  @Input() group: string;
-
-  private isShowing = false;
-
-  @Input()
-  get show(): boolean {
-    return this.isShowing;
-  }
-
-  @Output() showChange = new EventEmitter();
-
-  set show(val: boolean) {
-    this.isShowing = val;
-    this.showChange.emit(this.isShowing);
-  }
+  @Input() loadingImage: string;
+  @Input() show = false;
 
   constructor( private spinnerService: SpinnerService) { }
 
@@ -34,9 +19,11 @@ export class SpinnerComponent implements OnInit, OnDestroy {
     if(!this.name) throw new Error("Spinner must have a 'name' supplied");
 
     this.spinnerService._register(this);
+    console.log('call for register');
   }
 
   ngOnDestroy(): void{
     this.spinnerService._unregister(this);
+    console.log('call for unregister');
   }
 }

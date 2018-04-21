@@ -10,11 +10,11 @@ export class BaseServiceCoordinator {
   //base url for coordinator
   baseUrl = "http://localhost:3000/coordinator/dashboard";
 
-  eventUrl = "http://localhost:3000/coordinator/event";
+  eventUrl = "http://localhost:3000/coordinator/dashboard/event";
 
   constructor(private http: Http, private router: Router) { }
 
-  addEvent( details : String) {
+  addEvent( details : any[]) : Observable<any[]> {
     let headers = new Headers({
       'Content-Type': 'application/json'
     });
@@ -31,6 +31,27 @@ export class BaseServiceCoordinator {
       console.log(error.statusText);
       return Observable.throw(error);
     });
+  }
+
+  getEvents() : Observable<any[]>{
+
+     let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({
+      headers: headers
+    });
+
+    return this.http.get(this.eventUrl, options)
+    .map((response: Response) => {
+      const result = response.json();
+      return result;
+    })
+    .catch((error: Response | any) => {
+      console.log(error.statusText);
+      return Observable.throw(error);
+    });
+
   }
 
 }

@@ -43,7 +43,24 @@ module.exports = function(app) {
 
                 personalDetails.save().then(function(err) {
                     if(err) res.send(err);
-                    res.send(student);
+                    else {
+                        user.findOne({rollno : req.body.rollno}, (err, user) => {
+            
+                            if(err) res.send(err);
+                            else {
+                                console.log(user);
+                                PersonalDetails.findOne({_creator : user._id} )
+                                .populate('_training')
+                                .populate('_creator')
+                                .exec(function(err,detail) {
+                                if (err) res.send(err);
+                                console.log(detail);
+                                res.send(detail);
+                })
+            }
+        })
+                    }
+                    
                 })
                 
             
@@ -61,9 +78,23 @@ module.exports = function(app) {
                 if (result.password === req.body.password){
                    // console.log('here'+sess.rollno);
                     
-                    res.send(result);
-                }
-            }
+                         user.findOne({rollno : req.body.rollno}, (err, user) => {
+            
+                            if(err) res.send(err);
+                            else {
+                                console.log(user);
+                                PersonalDetails.findOne({_creator : user._id} )
+                                .populate('_training')
+                                .populate('_creator')
+                                .exec(function(err,detail) {
+                                if (err) res.send(err);
+                                console.log(detail);
+                                res.send(detail);
+                                })
+                            }
+                         })
+                } 
+            }                      
             else {
                 console.log('not here')
                 res.send('wrong credentials');

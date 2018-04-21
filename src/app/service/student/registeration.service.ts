@@ -30,4 +30,24 @@ export class RegisterationService {
     });
   }
 
+  postCompanyData(obj : {}) : Observable<any[]> {
+
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({
+      headers: headers,
+    });
+     return this.http.post(this.baseUrl+'student/registration/company-response',obj, options)
+    .map((response: Response) => {
+      
+      return response;
+    })
+    .catch((error: Response | any) => {
+      console.log(error.statusText);
+      return Observable.throw(error);
+    });
+
+  }
+
 }

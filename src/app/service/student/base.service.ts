@@ -9,14 +9,16 @@ import { Router } from '@angular/router';
 export class BaseService {
 
   //base url for student
-  baseUrl = "http://localhost:3000/student/home";
+  baseUrl = "http://localhost:3000/student";
+  trainingData : any;
+  studentData : any;
  
   constructor( private http: Http, private router: Router ) { }
 
   studentHome() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.get(this.baseUrl,  {
+    this.http.get(this.baseUrl+'/home',  {
     headers: headers
     })
       .subscribe(
@@ -29,6 +31,49 @@ export class BaseService {
     );
   }
 
-  
+  trainingPage( obj : {})  : Observable<any[]>{
+     let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({
+      headers: headers,
+    });
+     return this.http.post(this.baseUrl+'/training',obj, options)
+    .map((response: Response) => {
+      this.trainingData = response.json();
+      return response.json();
+    })
+    .catch((error: Response | any) => {
+      console.log(error.statusText);
+      return Observable.throw(error);
+    });
+  }
+
+  getTrainingData() {
+    return this.trainingData;
+  }
+
+  getStudentPage(obj : {}) : Observable<any[]>{
+     let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({
+      headers: headers,
+    });
+     return this.http.post(this.baseUrl+'/home',obj, options)
+    .map((response: Response) => {
+      this.studentData = response.json();
+      return response.json();
+    })
+    .catch((error: Response | any) => {
+      console.log(error.statusText);
+      return Observable.throw(error);
+    });
+
+  }
+
+  getStudentData() {
+    return this.studentData;
+  }
 
 }

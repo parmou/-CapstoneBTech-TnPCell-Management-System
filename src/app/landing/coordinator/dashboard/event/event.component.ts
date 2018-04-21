@@ -9,6 +9,11 @@ import { EventModel } from './event.model';
   styleUrls: ['./event.component.css']
 })
 export class EventComponent implements OnInit {
+
+  eventName : any = "";
+  branch : any = "";
+  year : any = "";
+
   times : any[] = [ 
     {
       "type" : "dummy type",
@@ -17,33 +22,64 @@ export class EventComponent implements OnInit {
     
   ];
 
-  events : any[] = [1];
+  events : any =[];
+  sizeBoolean: boolean = false;
+  eventResponse: any[];
+
+  
   constructor(private service: BaseServiceCoordinator) { }
 
   ngOnInit() {
+    this.service.getEvents().subscribe(
+      (res) => {
+        this.events = res;
+      },
+      (err) => {
+
+      },
+      () => {
+        if(this.events.length != 0)
+        this.sizeBoolean = true;
+      }
+    );
+
+    
     
   }
 
-  rand(type: String)
-  {
-    console.log(type);
-  }
+  
 
-  add(type : String,value: String) {
-    this.times.push({"type" : type,"value": value});
-    this.events.push(1);
+  add(type : String) {
+    
+    this.times.push({"type" : type, "value" : ""});
+   
   }
   remove(position : number) {
     this.times.splice(position,1);
   }
 
-  addEvent(eventName: EventModel) {
-    var eventname = eventName[0];
-    console.log(eventname);
-    /* format the array and pass as a string */
-    let details : String;
+  addEvent() {
 
-    this.service.addEvent(details);
+    let array : any = [];
+    array.push(this.eventName);
+    array.push(this.branch);
+    array.push(this.year);
+    array.push(this.times);
+    
+    this.service.addEvent(array).subscribe(
+      (res) => {
+        this.eventResponse = res;
+      },
+      (err) => {
+
+      },
+      ()=> {
+        if(this.events.length != 0)
+          this.sizeBoolean = true;
+          this.events.push(this.eventResponse);
+      } 
+    );
+    
   }
 
 }

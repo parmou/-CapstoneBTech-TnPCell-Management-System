@@ -31,12 +31,7 @@ export class TrainingComponent implements OnInit {
       this.checkState4 = false;
     }
 
-    if (position == 3) {
-      this.checkState1 = false;
-      this.checkState2 = false;
-      this.checkState3 = true;
-      this.checkState4 = false;
-    }
+   
     if (position == 4) {
       this.checkState1 = false;
       this.checkState2 = false;
