@@ -19,6 +19,8 @@ module.exports = function(app) {
             name: req.body.name,
             rollno: req.body.rollno,
             password: req.body.password,
+            branch: req.body.branch,
+            year: req.body.year,
             isCoordinator: false,
             _training: trainingDetails._id
         })

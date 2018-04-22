@@ -1,5 +1,5 @@
 <!-- Card -->
-<div class="card mx-xl-5 text-center">
+<div class="card text-center" style=" margin:0 auto;">
 
     <!-- Card body -->
     <div class="card-body">
@@ -9,14 +9,19 @@
             <p class="h4 text-center py-4">Search</p>
 
             <!-- Default input name -->
-            <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Year</label>
-            <input name = "year" type="text" id="defaultFormCardNameEx" class="form-control" ngModel>
+            <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Branch</label>
+            <select class="form-control" name="branch" ngModel required>
+                <option *ngFor="let branch of branches" [value]="branch">{{branch}}</option>
+            </select>
+            
             
             <br>
 
             <!-- Default input email -->
-            <label for="defaultFormCardEmailEx" class="grey-text font-weight-light">Branch</label>
-            <input name="branch" type="email" id="defaultFormCardEmailEx" class="form-control" ngModel>
+            <label for="defaultFormCardEmailEx" class="grey-text font-weight-light">Year</label>
+            <select class="form-control" name="year" ngModel required>
+                    <option class="form-control" *ngFor="let year of years" [value]="year">{{year}}</option>
+                  </select>
 
             <div class="text-center py-4 mt-3">
                 <button class="btn btn-outline-purple" type="submit">Hit Search!<i class="fa fa-paper-plane-o ml-2"></i></button>
