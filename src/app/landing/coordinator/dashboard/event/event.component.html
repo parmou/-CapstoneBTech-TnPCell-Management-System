@@ -6,21 +6,18 @@
 
   <!-- Event List -- >
 
-<div class="row">
-  <div class="col-md-2" >
-    <!-- Event Cards -->
-    <div *ngFor="let event of events; let i = index">
-      <div class="card" style="width: 18rem; margin: 2rem;" *ngIf="sizeBoolean" >
-          <div class="card-body">
-            <h5 class="card-title"></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-          </div>
+
+<div class="card-grid" *ngIf="sizeBoolean" style="margin-top:5%;">
+   <div class="card-wrap" *ngFor="let event of events; let i = index">
+    <div class="card">
+      <img src="http://placehold.it/500x500" class="card-img"/>
+      <div>
+        <h4>{{event.name}}</h4>
+        <p>{{event.year}} </p>
       </div>
     </div>
- 
+  </div>
+</div>
 
 
   <!-- Fab Button -->

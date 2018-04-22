@@ -1,55 +1,42 @@
 <app-studentnavigation></app-studentnavigation>
 
-<div class="customcontainer">
-  <div>
+<header>
+  <div></div>
+  <h1>{{username}}</h1>
+  
+</header>
+<input type="checkbox" id="menu-toggle"/>
+       <label for="menu-toggle">
+              <i id="open" class="material-icons">menu</i>
+              <i id="close" class="material-icons">arrow_back</i>
+          </label>
+          <ul id="menu">
+              <li><a href="#"><i class="material-icons">mode_edit</i>Edit</a></li>
+              <li><a href="#"><i class="material-icons">format_color_fill</i>Colors</a></li>
+              <li><a href="#"><i class="material-icons">insert_emoticons</i>Emoticons</a></li>
+              <li><a href="#"><i class="material-icons">insert_comment</i>Comments</a></li>
+          </ul>
+          <section>
+              <article >
+                  <p>
+                    <h3 style="color:black">Branch</h3> : <h3 style="color:black">{{studentData.branch}}</h3><br>
+                    <h3 style="color:black">Year</h3> : <h3 style="color:black">{{studentData.year}}</h3><br>
+                    <h3 style="color:black">Roll Number</h3> : <h3 style="color:black">{{studentData._creator.rollno}}</h3><br>
+                    <h3 style="color:black">ID</h3> : <h3 style="color:black">{{studentData._creator._id}}</h3>
+                
+                  
+  </article>
+</section>
 
-      <h5>Welcome!{{username}}</h5>
-      <h5>{{email}}</h5>
-</div>  
-  
-<div class="container">
-  <ul class="nav nav-pills nav-justified">
-    <li class="active"><a data-toggle="pill" href="#profile">Profile</a></li>
-    <li><a data-toggle="pill" href="#events">Events</a></li>
-    <li><a data-toggle="pill" href="#register">Register</a></li>
-  </ul>
-  
-  <div class="tab-content card">
-    <div id="profile" class="tab-pane fade in active">
-      <table class="table table-responsive">
-        <tr>
-          <td>Roll Number</td>
-          <td>{{rollno}} yes</td>
-        </tr>
-        <tr>
-          <td>Year</td>
-          <td>{{year}} yes</td>
-        </tr>
-        <tr>
-          <td>Branch</td>
-          <td>{{branch}} yes</td>
-        </tr>
-      </table>
-    </div>
-    <div id="events" class="tab-pane fade" style="overflow: auto;">
-       <div *ngFor="let event of events; let i = index">
-      <div class="card" style="width: 18rem; margin: 2rem;" *ngIf="sizeBoolean" >
-          <div class="card-body">
-            <h5 class="card-title"></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-          </div>
+
+<div class="card-grid" *ngIf="sizeBoolean" style="margin-top:5%;">
+   <div class="card-wrap" *ngFor="let event of events; let i = index">
+    <div class="card">
+      <img src="http://placehold.it/500x500" class="card-img"/>
+      <div>
+        <h4>{{event.name}}</h4>
+        <p>{{event.year}} </p>
       </div>
-    </div>
-    </div>
-    <div id="register" class="tab-pane fade">
-      <h3></h3>
-     <app-sindex></app-sindex>
     </div>
   </div>
 </div>
-  
-</div>
-<app-footer></app-footer>

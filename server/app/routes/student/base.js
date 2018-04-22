@@ -19,8 +19,6 @@ module.exports = function(app) {
             name: req.body.name,
             rollno: req.body.rollno,
             password: req.body.password,
-            branch: req.body.branch,
-            year: req.body.year,
             isCoordinator: false,
             _training: trainingDetails._id
         })
@@ -33,8 +31,8 @@ module.exports = function(app) {
                     else {
                          var personalDetails = new PersonalDetails({
                             /* Make user enter his branch and year at the start */
-                                year: "1",
-                                branch: "CSE",
+                                year: req.body.year,
+                                branch: req.body.branch,
                                 _creator : student._id,
                                 _training : trainingDetails._id
                             })

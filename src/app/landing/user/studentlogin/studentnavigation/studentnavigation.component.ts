@@ -41,6 +41,23 @@ export class StudentnavigationComponent implements OnInit {
       }
     )
   }
+
+
+  getHomePage() {
+    let array = [];
+    array.push(this.storage.get('rollno'));
+    this.base.getStudentPage(array).subscribe(
+      (res) => {
+
+      }, 
+      (err) => {
+
+      },
+      () => {
+        this.router.navigate(['/student/home']);
+      }
+    )
+  }
   
 
 }

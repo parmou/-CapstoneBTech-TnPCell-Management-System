@@ -11,7 +11,14 @@ module.exports = function(app) {
         User.findOne({rollno : req.body[0]}, (err,user) => {
             if(err) res.send(err);
             else {
-                res.send(user);
+                StudentPersonalDetails.findOne({_creator : user._id} )
+                                .populate('_training')
+                                .populate('_creator')
+                                .exec(function(err,detail) {
+                                if (err) res.send(err);
+                                console.log(detail);
+                                res.send(detail);
+                                })
             }
         })
 
@@ -26,6 +33,7 @@ module.exports = function(app) {
             
             if(err) res.send(err);
             else {
+                console.log(user);
                 StudentPersonalDetails.findOneAndUpdate({_creator : user._id}, {$set: {branch: req.body[0].branch, year: req.body[0].year}}, (err, details) => {
                     if(err) {
                         res.send(err);

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   signupResponse: any = null;
   show:boolean = false;
   branches = ['CSE', 'ECE', 'ME', 'CE', 'CHE', 'BT', 'BME', 'EE'];
-  years = [1,2,3,4];
+  years = ['1','2','3','4'];
 
   public data:any=[]
   constructor(private loginservice : LoginService, private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
@@ -81,9 +81,9 @@ export class LoginComponent implements OnInit {
                           console.log('exit');
                           this.show=false;
                           //this.spinnerService.hide('mySpinner2');
-                          this.storage.set('name',this.response.name);
-                          this.storage.set('isCoordinator', this.response.isCoordinator);
-                          this.storage.set('rollno', this.response.rollno);
+                          this.storage.set('name',this.response._creator.name);
+                          this.storage.set('isCoordinator', this.response._creator.isCoordinator);
+                          this.storage.set('rollno', this.response._creator.rollno);
 
                           console.log(this.storage.get('name'));
 
