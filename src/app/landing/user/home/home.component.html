@@ -1,39 +1,55 @@
 <app-studentnavigation></app-studentnavigation>
 
-<div class="container customcontainer" >
-	
-		<div class="well customwell">
-			<img src="https://lh3.googleusercontent.com/-4q1LKYUvj7M/WTOU4JMtHfI/AAAAAAAAAJE/VLM3JwrEk5Ya7vaR66DvceCqo9bHPMY1ACEwYBhgL/w140-h140-p/218ba9a5-1308-4bde-9115-8b2d00a042a8" alt="username">
-			<hr>
-			<h5>{{username}}</h5>
-			<h5>{{email}}</h5>
-		</div>
-	
-</div>
+<div class="customcontainer">
+  <div>
 
-<div class="overlay">
-	<div class="wrap" >
-	<i class="material-icons" >keyboard_arrow_left</i>
-  <div class="tile"> 
-    <div class="text">
-    <h3>News or notification</h3>
+      <h5>Welcome!{{username}}</h5>
+      <h5>{{email}}</h5>
+</div>  
+  
+<div class="container">
+  <ul class="nav nav-pills nav-justified">
+    <li class="active"><a data-toggle="pill" href="#profile">Profile</a></li>
+    <li><a data-toggle="pill" href="#events">Events</a></li>
+    <li><a data-toggle="pill" href="#register">Register</a></li>
+  </ul>
+  
+  <div class="tab-content card">
+    <div id="profile" class="tab-pane fade in active">
+      <table class="table table-responsive">
+        <tr>
+          <td>Roll Number</td>
+          <td>{{rollno}} yes</td>
+        </tr>
+        <tr>
+          <td>Year</td>
+          <td>{{year}} yes</td>
+        </tr>
+        <tr>
+          <td>Branch</td>
+          <td>{{branch}} yes</td>
+        </tr>
+      </table>
     </div>
-   </div>
-   <div class="tile"> 
-    <div class="text">
-    <h3>News or notification</h3>
+    <div id="events" class="tab-pane fade" style="overflow: auto;">
+       <div *ngFor="let event of events; let i = index">
+      <div class="card" style="width: 18rem; margin: 2rem;" *ngIf="sizeBoolean" >
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+      </div>
     </div>
-   </div>
-    <div class="tile"> 
-    <div class="text">
-    <h3>News or notification</h3>
     </div>
-   </div>
-   <i class="material-icons">keyboard_arrow_right</i>
-   </div>
-   
+    <div id="register" class="tab-pane fade">
+      <h3></h3>
+     <app-sindex></app-sindex>
+    </div>
   </div>
-
-
-<app-sindex></app-sindex>
+</div>
+  
+</div>
 <app-footer></app-footer>

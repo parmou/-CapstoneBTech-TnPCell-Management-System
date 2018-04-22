@@ -12,7 +12,8 @@ import { EditDetailsService  } from '../../../../service/student/edit-details.se
 export class UpdateUserDetailsComponent implements OnInit {
 
   name : any;
-
+  branches = ['CSE', 'ECE', 'ME', 'CE', 'CHE', 'BT', 'BME', 'EE'];
+  years = ['1', '2', '3', '4'];
   constructor(private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService, private service : EditDetailsService) { }
 
   ngOnInit() {

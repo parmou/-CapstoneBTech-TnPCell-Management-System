@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {BaseServiceCoordinator} from '../../../../service/coordinator/base.service'
+import {BaseServiceCoordinator} from '../../../../service/coordinator/base.service';
 import { EventModel } from './event.model';
 
 @Component({

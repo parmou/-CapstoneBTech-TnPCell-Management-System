@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { FormModel } from '../login/form.model';
 import { LoginModel } from '../login/login.model';
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
-import { SpinnerService } from '../../../spinner/spinner.service';
+
 
 @Component({
   selector: 'app-login',
@@ -18,9 +18,12 @@ export class LoginComponent implements OnInit {
   registered = true;
   response: any = null;
   signupResponse: any = null;
+  show:boolean = false;
+  branches = ['CSE', 'ECE', 'ME', 'CE', 'CHE', 'BT', 'BME', 'EE'];
+  years = [1,2,3,4];
 
   public data:any=[]
-  constructor(private loginservice : LoginService,private spinnerService: SpinnerService, private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
+  constructor(private loginservice : LoginService, private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
 
 
@@ -33,6 +36,7 @@ export class LoginComponent implements OnInit {
   }
 
   signup(value: FormModel){
+    this.show=true;
     this.loginservice.getRespForSignup(value)
                       .subscribe(
                         (res) => {
@@ -45,6 +49,7 @@ export class LoginComponent implements OnInit {
                                       console.log(error);
                                     },
                         () => {
+                          this.show = false;
                           this.storage.set('name',this.response._creator.name);
                           this.storage.set('isCoordinator', this.response._creator.isCoordinator);
                           this.storage.set('rollno', this.response._creator.rollno);
@@ -52,14 +57,20 @@ export class LoginComponent implements OnInit {
                           this.router.navigate(['/student/home']);
                         }
                       );
+                      
   }
 
   login(value: LoginModel){
 
     //console.log(value);
+    this.show=true;
     this.loginservice.getRespForLogin(value)
                       .subscribe(
                         (res) => {
+                          console.log('enter');
+                          
+                          //this.spinnerService.show('mySpinner2');
+                          //this.data = res;
                           console.log(res);
                           this.response = res;
                         },
@@ -67,9 +78,12 @@ export class LoginComponent implements OnInit {
                           console.log('error');
                         },
                         () => {
-                          this.storage.set('name',this.response._creator.name);
-                          this.storage.set('isCoordinator', this.response._creator.isCoordinator);
-                          this.storage.set('rollno', this.response._creator.rollno);
+                          console.log('exit');
+                          this.show=false;
+                          //this.spinnerService.hide('mySpinner2');
+                          this.storage.set('name',this.response.name);
+                          this.storage.set('isCoordinator', this.response.isCoordinator);
+                          this.storage.set('rollno', this.response.rollno);
 
                           console.log(this.storage.get('name'));
 

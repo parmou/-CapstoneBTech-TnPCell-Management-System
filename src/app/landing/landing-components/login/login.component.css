@@ -131,7 +131,9 @@ input::-moz-focus-inner {
   color: #d0d0d2;
 }
 */
-
+option{
+  background: #f7f7f7
+}
 .container{
   margin-top: 2%;
 }

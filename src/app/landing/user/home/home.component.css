@@ -1,16 +1,17 @@
-.customcontainer{
-  display: inline-flex;
-  margin-top: 3%;
-  width: 100%;
-  height: 315px;
-  background-image: url("http://www.trendycovers.com/covers/your_name_in_notifications_facebook_cover_1464550649.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  
+
+
+.card{
+  height:80%;
+  overflow: auto;
+
+}
+.table{
+  text-align: center;
+}
+.nav-justified{
+  display: inline-block;
 }
 .customwell{
-  margin-top: auto;
   width: 180px;
   clear: left;
   
@@ -24,99 +25,7 @@ img{
 h5{
   text-align: center;
 }
-@keyframes changecolor{
-  0% {background-color: #ffffff; }
-  25% {background-color:#e6ebff; }
-  50% {background-color:#ccd6ff; }
-  75% {background-color:#e6ebff; }
-  100% {background-color: #ffffff; }
-  
-
-}
-
-
-.overlay{
-  margin-top: 5%;
-  width: 100%;
-  height: 200px;
-   box-shadow: 35px 35px 77px -17px rgba(0,0,0,0.44);
-   background-color: #ccd6ff;
-   animation-name:changecolor;
-   animation-iteration-count: infinite;
-   animation-duration: 2s;
-   transition-timing-function: ease-in-out;
-   
- }
-.material-icons{
-  margin: auto;
- 
-}
-body
-{
-  background-color:#eee
-}
-.wrap
-{
-  margin:50px auto 0 auto;
-  width:100%;
-  display:flex;
-  align-items:space-around;
-  max-width:1200px;
-}
-.tile
-{
-  width:25%;
-  height:150px;
-  margin:10px;
-  background-color:#99aeff;
-  display:inline-block;
-  display: flex;
-  justify-content: center;
-  background-size:cover;
-  position:relative;
-  cursor:pointer;
-  transition: all 0.4s ease-out;
-  box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.44);
-  overflow:hidden;
-  color:white;
-  font-family:'Roboto';
-  
-}
-.tile img
-{
-  height:100%;
-  width:100%;
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:0;
-  transition: all 0.4s ease-out;
-}
-.tile .text
-{
-/*   z-index:99; */
-  position:absolute;
-  padding:30px;
-  height:calc(100% - 60px);
-}
-
-.tile:hover
-{
-box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
-  transform:scale(1.05);
-}
-
-.tile:hover span
-{
-  opacity:1;
-  transform:translateY(0px);
-}
-
-
-@media (max-width: 1000px) {
-  .wrap {
-   flex-direction: column;
-    width:400px;
-  }
-}
-
+@media screen and (min-width:500px) {
+    .customcontainer{ margin-top: 20%; } }
+@media screen and (min-width:767px) {
+    .customcontainer{ margin-top: 10%; } }
