@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import {BaseServiceCoordinator} from '../../../service/coordinator/base.service';
+
 
 @Component({
   selector: 'app-home',
@@ -13,7 +15,12 @@ export class HomeComponent implements OnInit {
   year: String;
   branch: String;
  email: String;
-  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService) {
+
+ events : any =[];
+  sizeBoolean: boolean = false;
+  eventResponse: any[];
+
+  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService, private service: BaseServiceCoordinator) {
     this.username = this.storage.get('name');
     this.email = this.storage.get('isCoordinator');
     this.rollno = this.storage.get('rollno');
@@ -27,6 +34,19 @@ export class HomeComponent implements OnInit {
     this.rollno = this.storage.get('rollno');
     this.year = this.storage.get('year');
     this.branch = this.storage.get('branch');
+
+    this.service.getEvents().subscribe(
+      (res) => {
+        this.events = res;
+      },
+      (err) => {
+
+      },
+      () => {
+        if(this.events.length != 0)
+        this.sizeBoolean = true;
+      }
+    );
 
     
   }
