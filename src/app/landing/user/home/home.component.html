@@ -9,30 +9,45 @@
 			<h5>{{email}}</h5>
 		</div>
 	
+<div class="container">
+  <ul class="nav nav-pills nav-justified">
+    <li class="active"><a data-toggle="pill" href="#profile">Profile</a></li>
+    <li><a data-toggle="pill" href="#events">Events</a></li>
+    <li><a data-toggle="pill" href="#register">Register</a></li>
+  </ul>
+  
+  <div class="tab-content card">
+    <div id="profile" class="tab-pane fade in active">
+      <table class="table">
+        <tr>
+          <td>Roll Number</td>
+          <td>{{rollno}}</td>
+        </tr>
+        <tr>
+          <td>Year</td>
+          <td>{{year}}</td>
+        </tr>
+        <tr>
+          <td>Branch</td>
+          <td>{{branch}}</td>
+        </tr>
+      </table>
+    </div>
+    <div id="events" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="register" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
 </div>
 
-<div class="overlay">
-	<div class="wrap" >
-	<i class="material-icons" >keyboard_arrow_left</i>
-  <div class="tile"> 
-    <div class="text">
-    <h3>News or notification</h3>
-    </div>
-   </div>
-   <div class="tile"> 
-    <div class="text">
-    <h3>News or notification</h3>
-    </div>
-   </div>
-    <div class="tile"> 
-    <div class="text">
-    <h3>News or notification</h3>
-    </div>
-   </div>
-   <i class="material-icons">keyboard_arrow_right</i>
-   </div>
+
+
    
-  </div>
+
 
 
 <app-sindex></app-sindex>

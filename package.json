@@ -29,7 +29,7 @@
     "ejs": "^2.5.8",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
-    "firebase": "^4.12.1",
+    "firebase": "4.12.1",
     "mdbootstrap": "^4.4.4",
     "mongoose": "^5.0.14",
     "rxjs": "^5.5.2",
