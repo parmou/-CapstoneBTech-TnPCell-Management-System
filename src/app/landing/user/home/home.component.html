@@ -32,10 +32,12 @@
 <div class="card-grid" *ngIf="sizeBoolean" style="margin-top:5%;">
    <div class="card-wrap" *ngFor="let event of events; let i = index">
     <div class="card">
-      <img src="http://placehold.it/500x500" class="card-img"/>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRNPI-JJmT8clEjJs6Co5BXTtgIoUCjMOk-ZsBu47Ayz3cTL-I" class="card-img"/>
       <div>
-        <h4>{{event.name}}</h4>
-        <p>{{event.year}} </p>
+        <p>Event Name: {{event.name}}</p>
+        <p>Branch: {{event.year}} </p>
+        <p>Event Id: {{event._id}} </p>
+        <p>Year: {{event.branch}} </p>
       </div>
     </div>
   </div>
