@@ -40,6 +40,7 @@ export class EventComponent implements OnInit {
       () => {
         if(this.events.length != 0)
         this.sizeBoolean = true;
+        console.log(this.events);
       }
     );
 

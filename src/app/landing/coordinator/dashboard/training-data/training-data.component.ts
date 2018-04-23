@@ -60,6 +60,7 @@ export class TrainingDataComponent implements OnInit {
 
           },
           () => {
+            
             this.data[Number.parseInt(index ,10)] = this.responseData;
             this.userData = this.data[Number.parseInt(index ,10)];
           }

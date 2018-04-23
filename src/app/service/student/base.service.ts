@@ -73,6 +73,7 @@ export class BaseService {
   }
 
   getStudentData() {
+    console.log(this.getStudentData);
     return this.studentData;
   }
 

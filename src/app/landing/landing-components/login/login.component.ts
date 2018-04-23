@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
                                     },
                         () => {
                           this.show = false;
+
                           this.storage.set('name',this.response._creator.name);
                           this.storage.set('isCoordinator', this.response._creator.isCoordinator);
                           this.storage.set('rollno', this.response._creator.rollno);
@@ -78,14 +79,14 @@ export class LoginComponent implements OnInit {
                           console.log('error');
                         },
                         () => {
-                          console.log('exit');
+                          
                           this.show=false;
                           //this.spinnerService.hide('mySpinner2');
                           this.storage.set('name',this.response._creator.name);
                           this.storage.set('isCoordinator', this.response._creator.isCoordinator);
                           this.storage.set('rollno', this.response._creator.rollno);
 
-                          console.log(this.storage.get('name'));
+                          console.log(this.storage.get('isCoordinator'));
 
                           this.router.navigate(['/student/home']);
                         }

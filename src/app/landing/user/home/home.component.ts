@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     this.rollno = this.storage.get('rollno');
     this.year = this.storage.get('year');
     this.branch = this.storage.get('branch'); 
-   }
+  }
 
   ngOnInit() {
    this.username = this.storage.get('name');
@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
     this.branch = this.storage.get('branch');
 
     this.studentData = this.base.getStudentData();
+    
     console.log(this.studentData);
 
     this.service.getEvents().subscribe(
